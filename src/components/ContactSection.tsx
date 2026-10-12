@@ -66,34 +66,37 @@ export default function ContactSection() {
                       {wine.name} ({wine.price})
                     </option>
                   ))}
-                  <option value="Caja Mixta (Surtido Especial)">
-                    Caja Mixta Especial (Surtido de Variedades)
-                  </option>
+                  {wines.length > 1 && (
+                    <option value="Caja Mixta (Surtido Especial)">
+                      Caja Mixta Especial (Surtido de Variedades)
+                    </option>
+                  )}
                 </select>
               </div>
 
               {/* Cantidad de Botellas */}
               <div>
                 <label className="block text-xs font-semibold uppercase tracking-wider text-neutral-300 mb-2">
-                  Cantidad
+                  Selecciona tu Pack
                 </label>
-                <div className="grid grid-cols-3 gap-3">
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
                   {[
-                    { id: "2", label: "2 Botellas" },
-                    { id: "6", label: "Caja de 6" },
-                    { id: "12", label: "Caja de 12" },
+                    { id: "2", label: "Pack x2", desc: "Cita / Terraza" },
+                    { id: "6", label: "Caja x6", desc: "Juntada con amigos" },
+                    { id: "12", label: "Caja x12", desc: "Fiesta / Evento" },
                   ].map((q) => (
                     <button
                       key={q.id}
                       type="button"
                       onClick={() => setQuantity(q.id)}
-                      className={`rounded-xl py-3 text-xs font-semibold uppercase tracking-wider transition ${
+                      className={`rounded-2xl p-3 text-center transition ${
                         quantity === q.id
-                          ? "bg-[#651025] text-white border border-[#b01e42] shadow-md shadow-[#651025]/40"
+                          ? "bg-[#651025] text-white border border-[#b01e42] shadow-lg shadow-[#651025]/40 scale-102"
                           : "border border-neutral-800 bg-neutral-900/60 text-neutral-400 hover:text-white"
                       }`}
                     >
-                      {q.label}
+                      <div className="text-xs font-bold uppercase tracking-wider">{q.label}</div>
+                      <div className="text-[10px] text-neutral-400 mt-0.5">{q.desc}</div>
                     </button>
                   ))}
                 </div>

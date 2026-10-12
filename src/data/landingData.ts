@@ -179,10 +179,10 @@ export const landingData = {
       badge: "Insignia de la Casa",
       price: "$14.990 CLP",
       priceNote: "Por botella / Descuento por caja de 6",
-      image: "/images/bottle-frizzante.jpg",
+      image: "/images/alebrije_inst_6.jpg",
       category: "rose",
       specs: {
-        alcohol: "10.5% Vol",
+        alcohol: "12% Vol",
         temperature: "6°C - 8°C",
         sparkle: "Frizzante Natural (Perlage fino)",
         terroir: "Valle Central, Chile",
@@ -201,64 +201,6 @@ export const landingData = {
       description:
         "Nuestra creación más celebrada. Un vino frizzante que equilibra la dulzura natural de la uva con una acidez cítrica crujiente y una efervescencia chispeante que acompaña desde una tarde soleada hasta una cena íntima.",
     },
-    {
-      id: "alebrije-frizzante-tinto-joven",
-      name: "Alebrije Frizzante Tinto",
-      variety: "Vino Frizzante Tinto Joven",
-      tagline: "El carácter del tinto con la ligereza de la burbuja.",
-      badge: "Edición Limitada",
-      price: "$15.990 CLP",
-      priceNote: "Por botella / Cajas disponibles",
-      image: "/images/bottle-frizzante.jpg",
-      category: "tinto",
-      specs: {
-        alcohol: "11.0% Vol",
-        temperature: "8°C - 10°C",
-        sparkle: "Frizzante Ligero",
-        terroir: "Valle del Maipo, Chile",
-      },
-      tastingNotes: {
-        view: "Rojo rubí profundo y limpio con destellos carmesí.",
-        nose: "Cereza negra, moras maduras, regaliz y una nota especiada sutil.",
-        mouth: "Taninos aterciopelados suavizados por la chispa de la burbuja. Sensación envolvente y fresca.",
-      },
-      pairing: [
-        "Pizzas artesanales y pastas con salsas rojas",
-        "Hamburguesas gourmet y carnes magras a la parrilla",
-        "Charcutería ibérica y quesos curados",
-      ],
-      description:
-        "Una propuesta audaz y moderna: un vino tinto joven con burbuja fina que rompe con la seriedad convencional para ofrecer una experiencia festiva y con mucho cuerpo.",
-    },
-    {
-      id: "alebrije-frizzante-blanco-del-valle",
-      name: "Alebrije Frizzante Blanco",
-      variety: "Vino Frizzante Blanco Aromático",
-      tagline: "Cítrico, mineral y vigorizante.",
-      badge: "Próximo Lanzamiento",
-      price: "$14.990 CLP",
-      priceNote: "Reserva anticipada disponible",
-      image: "/images/bottle-frizzante.jpg",
-      category: "blanco",
-      specs: {
-        alcohol: "10.0% Vol",
-        temperature: "5°C - 7°C",
-        sparkle: "Frizzante Cristalino",
-        terroir: "Valle de Casablanca / Central, Chile",
-      },
-      tastingNotes: {
-        view: "Amarillo pálido con destellos verdosos, límpido y radiante.",
-        nose: "Manzana verde, lima, maracuyá y flores blancas de azahar.",
-        mouth: "Acidez electrizante y vivaz. Muy seco, mineral y sumamente saciante.",
-      },
-      pairing: [
-        "Sushi, sashimi y comida nikkei",
-        "Tiraditos de pescado blanco",
-        "Ensaladas verdes con queso de cabra",
-      ],
-      description:
-        "La máxima expresión de frescura cordillerana. Ideal para aperitivos junto a la piscina o celebraciones bajo el sol.",
-    },
   ] as WineProduct[],
 
   // ----------------------------------------------------------------------------
@@ -266,30 +208,30 @@ export const landingData = {
   // ----------------------------------------------------------------------------
   ritual: {
     title: "El Ritual del Frizzante",
-    subtitle: "Cómo despertar todo su potencial en 4 pasos",
+    subtitle: "Cómo despertar todo su potencial en 4 pasos (sin protocolos aburridos)",
     steps: [
       {
         step: "01",
-        title: "El Frío Perfecto",
-        desc: "Llévalo a la hielera o refrigerador. El frizzante despliega su magia óptima entre los 6°C y 8°C.",
+        title: "Golpe Helado (6°-8°C)",
+        desc: "Llévalo a la hielera o al frío extremo del refrigerador. El vino frizzante se disfruta bien helado para que la aguja chispee en boca.",
         icon: "thermometer",
       },
       {
         step: "02",
-        title: "El Descorche Sereno",
-        desc: "Abre suavemente con ligera inclinación. Escucharás un suspiro sutil que anuncia la vida de sus burbujas.",
+        title: "El Descorche Sutil",
+        desc: "Abre suavemente con ligera inclinación. Un pop delicado liberará la magia de sus aromas a frutos rojos y flores silvestres.",
         icon: "sparkle",
       },
       {
         step: "03",
-        title: "La Copa Elegida",
-        desc: "Sirve en copa tulipán o flauta amplia para que las notas florales respiren mientras la burbuja danza.",
+        title: "Copa o Vaso (Tú Eliges)",
+        desc: "Sírvelo en copa flauta, copa de vino amplia o incluso en tu vaso preferido con hielo y una rodaja de frutilla. ¡Cero poses, puro goce!",
         icon: "glass",
       },
       {
         step: "04",
-        title: "El Brindis Compartido",
-        desc: "Choca las copas, respira el aroma y celebra el instante presente. Despierta tu espíritu.",
+        title: "El Brindis & Buena Vibra",
+        desc: "Choca las copas, comparte la risa y despierta tu espíritu. Un vino creado para conectar personas y celebrar el presente.",
         icon: "heart",
       },
     ],
@@ -334,28 +276,28 @@ export const landingData = {
   instagramGallery: [
     {
       id: "ig-1",
-      imageUrl: "/images/bottle-frizzante.jpg",
+      imageUrl: "/images/alebrije_inst_1.jpg",
       caption: "Burbujas al atardecer. Cada botella guarda un instante irrepetible. #ArteTierraVino",
       likes: "184",
       link: "https://www.instagram.com/vinos_alebrije",
     },
     {
       id: "ig-2",
-      imageUrl: "/images/ritual-pour.jpg",
+      imageUrl: "/images/alebrije_inst_2.jpg",
       caption: "El servicio perfecto: 6° a 8°C de frescura pura. ¿Ya probaste nuestro Rosé?",
       likes: "245",
       link: "https://www.instagram.com/vinos_alebrije",
     },
     {
       id: "ig-3",
-      imageUrl: "/images/hero.jpg",
+      imageUrl: "/images/alebrije_inst_4.jpg",
       caption: "La cordillera vigila nuestros viñedos. De la tierra chilena a tu copa.",
       likes: "312",
       link: "https://www.instagram.com/vinos_alebrije",
     },
     {
       id: "ig-4",
-      imageUrl: "/images/grapes-harvest.jpg",
+      imageUrl: "/images/alebrije_inst_5.jpg",
       caption: "Manos artesanas que seleccionan solo los racimos más puros en cosecha.",
       likes: "198",
       link: "https://www.instagram.com/vinos_alebrije",

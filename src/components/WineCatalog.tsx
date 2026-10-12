@@ -11,257 +11,280 @@ import {
   Info,
   Utensils,
   CheckCircle2,
-  X,
+  Clock,
+  Compass,
+  Zap,
 } from "lucide-react";
 import { landingData, WineProduct } from "@/data/landingData";
 
 export default function WineCatalog() {
-  const [activeCategory, setActiveCategory] = useState<string>("all");
-  const [selectedWine, setSelectedWine] = useState<WineProduct | null>(null);
+  const { wines } = landingData;
+  const [activeTab, setActiveTab] = useState<"cata" | "maridaje" | "detalles">("cata");
+  const [selectedPack, setSelectedPack] = useState<{ qty: number; label: string }>({
+    qty: 2,
+    label: "Pack x2 (Ideal para compartir)",
+  });
 
-  const filteredWines =
-    activeCategory === "all"
-      ? landingData.wines
-      : landingData.wines.filter((wine) => wine.category === activeCategory);
+  const featuredWine = wines[0];
 
   return (
     <section id="vinos" className="relative py-24 sm:py-32 bg-[#0b0809]">
-      {/* Background Decorative Rings */}
-      <div className="absolute top-1/3 left-0 h-96 w-96 rounded-full bg-[#881632]/10 blur-[150px] pointer-events-none" />
-      <div className="absolute bottom-10 right-0 h-96 w-96 rounded-full bg-[#d4af37]/10 blur-[150px] pointer-events-none" />
+      {/* Background Radiant Atmosphere */}
+      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 h-[500px] w-[500px] rounded-full bg-[#881632]/15 blur-[160px] pointer-events-none" />
+      <div className="absolute bottom-10 right-10 h-80 w-80 rounded-full bg-[#d4af37]/10 blur-[130px] pointer-events-none" />
 
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto">
-          <span className="text-xs font-semibold tracking-[0.25em] text-[#d4af37] uppercase">
-            COLECCIÓN ARTESANAL
-          </span>
-          <h2 className="mt-3 font-serif text-3xl sm:text-5xl font-bold tracking-tight text-white">
-            Nuestros Vinos Frizzante
+          <div className="inline-flex items-center gap-2 rounded-full border border-[#d4af37]/40 bg-[#151013] px-3.5 py-1 text-xs font-semibold tracking-[0.2em] text-[#d4af37] uppercase">
+            <Sparkles className="h-3.5 w-3.5" />
+            <span>EDICIÓN ARTESANAL</span>
+          </div>
+
+          <h2 className="mt-4 font-serif text-3xl sm:text-5xl md:text-6xl font-bold tracking-tight text-white">
+            Nuestra Creación Insignia
           </h2>
           <div className="mx-auto mt-4 h-0.5 w-24 bg-gradient-to-r from-transparent via-[#d4af37] to-transparent" />
-          <p className="mt-5 text-base sm:text-lg text-neutral-300 font-light">
-            Efervescencia natural nacida para refrescar tus sentidos. Cada variedad es un homenaje al color, la tierra y el gozo de compartir.
+          <p className="mt-5 text-base sm:text-lg text-neutral-300 font-light leading-relaxed">
+            Un vino frizzante joven, vibrante y refrescante. Creado para quienes buscan disfrutar sin protocolos acartonados: burbujas vivaces, notas frutales y frescura pura.
           </p>
-
-          {/* Category Filter Pills */}
-          <div className="mt-8 flex flex-wrap items-center justify-center gap-2 sm:gap-3">
-            {[
-              { id: "all", label: "Toda la Colección" },
-              { id: "rose", label: "Frizzante Rosé" },
-              { id: "tinto", label: "Frizzante Tinto" },
-              { id: "blanco", label: "Frizzante Blanco" },
-            ].map((cat) => (
-              <button
-                key={cat.id}
-                onClick={() => setActiveCategory(cat.id)}
-                className={`rounded-full px-5 py-2 text-xs font-medium tracking-wider uppercase transition-all duration-300 ${
-                  activeCategory === cat.id
-                    ? "bg-[#881632] text-white shadow-lg shadow-[#881632]/40 scale-105 border border-[#b01e42]"
-                    : "border border-neutral-800 bg-[#151013]/60 text-neutral-400 hover:border-neutral-700 hover:text-white"
-                }`}
-              >
-                {cat.label}
-              </button>
-            ))}
-          </div>
         </div>
 
-        {/* Products Grid */}
-        <div className="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {filteredWines.map((wine) => (
-            <div
-              key={wine.id}
-              className="group relative flex flex-col justify-between overflow-hidden rounded-3xl border border-white/10 bg-[#151013] transition-all duration-500 hover:border-[#d4af37]/50 hover:shadow-2xl hover:shadow-[#651025]/30 hover:-translate-y-2"
-            >
-              {/* Top Accent Gradient */}
-              <div className="h-1.5 w-full bg-gradient-to-r from-[#420a17] via-[#d4af37] to-[#881632]" />
+        {/* FEATURED SPOTLIGHT SHOWCASE (Optimizado para el producto estrella) */}
+        {featuredWine && (
+          <div className="mt-16 mx-auto max-w-5xl overflow-hidden rounded-3xl border border-white/10 bg-[#151013]/90 shadow-2xl backdrop-blur-xl relative">
+            {/* Top Glowing Gradient Bar */}
+            <div className="h-2 w-full bg-gradient-to-r from-[#420a17] via-[#d4af37] to-[#881632]" />
 
-              <div className="p-6 sm:p-7 flex-1 flex flex-col">
-                {/* Badge & Category */}
-                <div className="flex items-center justify-between gap-2">
-                  <span className="text-xs uppercase tracking-widest text-[#d4af37] font-semibold">
-                    {wine.variety}
-                  </span>
-                  {wine.badge && (
-                    <span className="inline-flex items-center gap-1 rounded-full border border-[#d4af37]/40 bg-[#d4af37]/15 px-2.5 py-0.5 text-[11px] font-medium text-[#f7e2a9]">
-                      <Sparkles className="h-3 w-3 text-[#d4af37]" />
-                      {wine.badge}
-                    </span>
-                  )}
-                </div>
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 p-6 sm:p-10 lg:p-12 items-center">
+              {/* Columna Izquierda: Botella con Efecto Glow y Badges */}
+              <div className="lg:col-span-5 relative flex flex-col items-center justify-center">
+                {/* Glow de la botella */}
+                <div className="absolute inset-0 bg-radial-[at_center_center] from-[#881632]/40 via-transparent to-transparent blur-2xl" />
 
-                {/* Product Title */}
-                <h3 className="mt-3 font-serif text-2xl font-bold text-white transition-colors group-hover:text-[#f7e2a9]">
-                  {wine.name}
-                </h3>
-                <p className="mt-1 text-xs italic text-neutral-400 font-light">
-                  {wine.tagline}
-                </p>
-
-                {/* Image Showcase */}
-                <div className="relative my-6 h-64 w-full overflow-hidden rounded-2xl bg-gradient-to-b from-[#20141a] to-[#0d090b] flex items-center justify-center p-3">
+                <div className="relative h-80 sm:h-96 w-full max-w-xs overflow-hidden rounded-2xl bg-gradient-to-b from-[#20141a] to-[#0d090b] border border-white/10 shadow-2xl group flex items-center justify-center p-4">
                   <Image
-                    src={wine.image}
-                    alt={wine.name}
+                    src={featuredWine.image}
+                    alt={featuredWine.name}
                     fill
                     className="object-cover transition-transform duration-700 group-hover:scale-105"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#151013] via-transparent to-transparent opacity-80" />
-                </div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#151013] via-transparent to-transparent opacity-60" />
 
-                {/* Quick Specs Chips */}
-                <div className="grid grid-cols-2 gap-2 text-xs text-neutral-300">
-                  <div className="flex items-center gap-2 rounded-xl border border-white/5 bg-white/[0.02] p-2">
-                    <Wine className="h-4 w-4 text-[#d4af37] shrink-0" />
-                    <span>{wine.specs.alcohol}</span>
-                  </div>
-                  <div className="flex items-center gap-2 rounded-xl border border-white/5 bg-white/[0.02] p-2">
-                    <Thermometer className="h-4 w-4 text-[#d4af37] shrink-0" />
-                    <span>{wine.specs.temperature}</span>
+                  {/* Stamp flotante sobre la foto */}
+                  <div className="absolute top-4 left-4 rounded-full border border-[#d4af37]/60 bg-[#151013]/90 px-3 py-1 text-[11px] font-bold tracking-wider text-[#f7e2a9] uppercase shadow-lg">
+                    {featuredWine.badge || "Insignia de la Casa"}
                   </div>
                 </div>
 
-                {/* Description Excerpt */}
-                <p className="mt-4 text-xs text-neutral-300 leading-relaxed font-light line-clamp-3">
-                  {wine.description}
-                </p>
-
-                {/* Interactive Action: Ver Ficha Técnica */}
-                <button
-                  type="button"
-                  onClick={() => setSelectedWine(wine)}
-                  className="mt-4 inline-flex items-center gap-1.5 text-xs text-[#f7e2a9] hover:underline font-medium cursor-pointer"
-                >
-                  <Info className="h-3.5 w-3.5" />
-                  <span>Ver notas de cata y maridaje</span>
-                </button>
+                {/* Chips rápidos debajo de la botella */}
+                <div className="mt-4 flex flex-wrap justify-center gap-2">
+                  <span className="rounded-full border border-white/10 bg-white/[0.04] px-3 py-1 text-xs text-neutral-300 font-medium">
+                    🍷 {featuredWine.specs.alcohol}
+                  </span>
+                  <span className="rounded-full border border-white/10 bg-white/[0.04] px-3 py-1 text-xs text-neutral-300 font-medium">
+                    🧊 {featuredWine.specs.temperature}
+                  </span>
+                  <span className="rounded-full border border-white/10 bg-white/[0.04] px-3 py-1 text-xs text-neutral-300 font-medium">
+                    🫧 Frizzante Natural
+                  </span>
+                </div>
               </div>
 
-              {/* Price & Purchase Bar */}
-              <div className="border-t border-white/10 bg-[#0e0a0c] p-6 flex items-center justify-between gap-3">
+              {/* Columna Derecha: Información, Perfil Sensorial y Opciones de Compra */}
+              <div className="lg:col-span-7 flex flex-col justify-between">
                 <div>
-                  <div className="font-serif text-2xl font-bold text-white">
-                    {wine.price}
+                  <div className="flex items-center gap-2 text-xs font-semibold tracking-widest text-[#d4af37] uppercase">
+                    <span>{featuredWine.variety}</span>
+                    <span>•</span>
+                    <span>{featuredWine.specs.terroir}</span>
                   </div>
-                  {wine.priceNote && (
-                    <div className="text-[10px] text-neutral-400">
-                      {wine.priceNote}
+
+                  <h3 className="mt-2 font-serif text-3xl sm:text-4xl font-bold text-white">
+                    {featuredWine.name}
+                  </h3>
+                  <p className="mt-1 text-sm text-[#f7e2a9] italic font-light">
+                    “{featuredWine.tagline}”
+                  </p>
+
+                  <p className="mt-4 text-sm text-neutral-300 font-light leading-relaxed">
+                    {featuredWine.description}
+                  </p>
+
+                  {/* Vibe / Sensación Meters */}
+                  <div className="mt-6 grid grid-cols-2 sm:grid-cols-4 gap-2 text-center text-xs">
+                    <div className="rounded-xl border border-white/5 bg-white/[0.02] p-2.5">
+                      <div className="text-[#f7e2a9] font-bold">12% Vol</div>
+                      <div className="text-[10px] text-neutral-400 mt-0.5">Grado Óptimo</div>
                     </div>
-                  )}
+                    <div className="rounded-xl border border-white/5 bg-white/[0.02] p-2.5">
+                      <div className="text-[#f7e2a9] font-bold">6° a 8°C</div>
+                      <div className="text-[10px] text-neutral-400 mt-0.5">Servir Muy Frío</div>
+                    </div>
+                    <div className="rounded-xl border border-white/5 bg-white/[0.02] p-2.5">
+                      <div className="text-[#f7e2a9] font-bold">Aguja Fina</div>
+                      <div className="text-[10px] text-neutral-400 mt-0.5">Burbuja Suave</div>
+                    </div>
+                    <div className="rounded-xl border border-white/5 bg-white/[0.02] p-2.5">
+                      <div className="text-[#f7e2a9] font-bold">Andino</div>
+                      <div className="text-[10px] text-neutral-400 mt-0.5">Chile</div>
+                    </div>
+                  </div>
+
+                  {/* Ocasiones & Vibra Recomendada */}
+                  <div className="mt-5 flex flex-wrap items-center gap-1.5 text-[11px]">
+                    <span className="text-neutral-400 font-medium mr-1">Momentos top:</span>
+                    {[
+                      "🌅 Atardecer en Terraza",
+                      "🍕 Pizza & Burgers",
+                      "🥂 Brindis Relajado",
+                      "🧀 Tablas de Queso",
+                    ].map((m, i) => (
+                      <span
+                        key={i}
+                        className="rounded-full border border-white/10 bg-white/[0.03] px-2.5 py-0.5 text-neutral-300 font-medium"
+                      >
+                        {m}
+                      </span>
+                    ))}
+                  </div>
+
+                  {/* Pestañas Interactivas: Notas de Cata vs Maridaje */}
+                  <div className="mt-6">
+                    <div className="flex border-b border-white/10 gap-4 text-xs font-semibold uppercase tracking-wider">
+                      <button
+                        onClick={() => setActiveTab("cata")}
+                        className={`pb-2 transition ${
+                          activeTab === "cata"
+                            ? "text-[#f7e2a9] border-b-2 border-[#d4af37]"
+                            : "text-neutral-400 hover:text-white"
+                        }`}
+                      >
+                        Notas de Cata
+                      </button>
+                      <button
+                        onClick={() => setActiveTab("maridaje")}
+                        className={`pb-2 transition ${
+                          activeTab === "maridaje"
+                            ? "text-[#f7e2a9] border-b-2 border-[#d4af37]"
+                            : "text-neutral-400 hover:text-white"
+                        }`}
+                      >
+                        Maridajes Sugeridos
+                      </button>
+                    </div>
+
+                    <div className="mt-4">
+                      {activeTab === "cata" && (
+                        <div className="space-y-2.5 text-xs text-neutral-300">
+                          <div className="flex items-start gap-2 rounded-xl bg-white/[0.02] p-3 border border-white/5">
+                            <Eye className="h-4 w-4 text-[#d4af37] shrink-0 mt-0.5" />
+                            <div>
+                              <strong className="text-white">A la Vista:</strong>{" "}
+                              {featuredWine.tastingNotes.view}
+                            </div>
+                          </div>
+                          <div className="flex items-start gap-2 rounded-xl bg-white/[0.02] p-3 border border-white/5">
+                            <Sparkles className="h-4 w-4 text-[#d4af37] shrink-0 mt-0.5" />
+                            <div>
+                              <strong className="text-white">En Nariz:</strong>{" "}
+                              {featuredWine.tastingNotes.nose}
+                            </div>
+                          </div>
+                          <div className="flex items-start gap-2 rounded-xl bg-white/[0.02] p-3 border border-white/5">
+                            <Wine className="h-4 w-4 text-[#d4af37] shrink-0 mt-0.5" />
+                            <div>
+                              <strong className="text-white">En Boca:</strong>{" "}
+                              {featuredWine.tastingNotes.mouth}
+                            </div>
+                          </div>
+                        </div>
+                      )}
+
+                      {activeTab === "maridaje" && (
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-neutral-300">
+                          {featuredWine.pairing.map((item, idx) => (
+                            <div
+                              key={idx}
+                              className="flex items-center gap-2 rounded-xl bg-white/[0.02] p-3 border border-white/5"
+                            >
+                              <CheckCircle2 className="h-4 w-4 text-[#d4af37] shrink-0" />
+                              <span>{item}</span>
+                            </div>
+                          ))}
+                        </div>
+                      )}
+                    </div>
+                  </div>
                 </div>
 
-                <a
-                  href={landingData.createWhatsAppLink(wine.name, 2)}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-[#651025] to-[#881632] px-4 py-2.5 text-xs font-semibold tracking-wider uppercase text-white shadow-lg shadow-[#651025]/30 transition duration-300 hover:from-[#881632] hover:to-[#b01e42] hover:scale-105 active:scale-95"
-                >
-                  <MessageCircle className="h-3.5 w-3.5 text-[#f7e2a9]" />
-                  <span>Pedir</span>
-                </a>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
+                {/* Barra de Pedido Directo con Selección de Pack */}
+                <div className="mt-8 pt-6 border-t border-white/10">
+                  <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                    <div>
+                      <div className="text-xs text-neutral-400">Precio de Referencia:</div>
+                      <div className="font-serif text-3xl font-bold text-white">
+                        {featuredWine.price}
+                      </div>
+                      <div className="text-[11px] text-[#f7e2a9]">
+                        {featuredWine.priceNote}
+                      </div>
+                    </div>
 
-      {/* MODAL DETALLES Y FICHA TÉCNICA */}
-      {selectedWine && (
-        <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/90 backdrop-blur-md animate-fade-in">
-          <div className="relative w-full max-w-2xl overflow-hidden rounded-3xl border border-[#420a17] bg-[#151013] p-6 sm:p-8 shadow-2xl max-h-[90vh] overflow-y-auto">
-            {/* Botón Cerrar */}
-            <button
-              onClick={() => setSelectedWine(null)}
-              className="absolute top-4 right-4 flex h-9 w-9 items-center justify-center rounded-full border border-neutral-700 bg-neutral-900/80 text-neutral-400 hover:text-white"
-            >
-              <X className="h-5 w-5" />
-            </button>
+                    {/* Selector de Pack Rápido */}
+                    <div className="flex items-center gap-2">
+                      {[
+                        { qty: 1, label: "1 Botella" },
+                        { qty: 2, label: "Pack x2" },
+                        { qty: 6, label: "Caja x6" },
+                      ].map((pack) => (
+                        <button
+                          key={pack.qty}
+                          onClick={() => setSelectedPack(pack)}
+                          className={`rounded-xl px-3 py-2 text-xs font-semibold uppercase tracking-wider transition ${
+                            selectedPack.qty === pack.qty
+                              ? "bg-[#651025] text-white border border-[#b01e42] shadow-md shadow-[#651025]/40"
+                              : "border border-neutral-800 bg-neutral-900/60 text-neutral-400 hover:text-white"
+                          }`}
+                        >
+                          {pack.label}
+                        </button>
+                      ))}
+                    </div>
+                  </div>
 
-            <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-[#d4af37]">
-              <span>{selectedWine.variety}</span>
-              {selectedWine.badge && <span>• {selectedWine.badge}</span>}
-            </div>
-
-            <h3 className="mt-2 font-serif text-2xl sm:text-3xl font-bold text-white">
-              {selectedWine.name}
-            </h3>
-            <p className="mt-1 text-sm text-neutral-400 italic">
-              {selectedWine.tagline}
-            </p>
-
-            {/* Ficha Técnica: Notas de Cata */}
-            <div className="mt-6 space-y-4">
-              <h4 className="font-serif text-lg font-bold text-white border-b border-white/10 pb-2">
-                Notas de Cata
-              </h4>
-
-              <div className="rounded-xl border border-white/5 bg-white/[0.02] p-4">
-                <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-[#f7e2a9]">
-                  <Eye className="h-4 w-4 text-[#d4af37]" /> A la Vista
-                </div>
-                <p className="mt-1 text-xs text-neutral-300">
-                  {selectedWine.tastingNotes.view}
-                </p>
-              </div>
-
-              <div className="rounded-xl border border-white/5 bg-white/[0.02] p-4">
-                <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-[#f7e2a9]">
-                  <Sparkles className="h-4 w-4 text-[#d4af37]" /> En Nariz
-                </div>
-                <p className="mt-1 text-xs text-neutral-300">
-                  {selectedWine.tastingNotes.nose}
-                </p>
-              </div>
-
-              <div className="rounded-xl border border-white/5 bg-white/[0.02] p-4">
-                <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-[#f7e2a9]">
-                  <Wine className="h-4 w-4 text-[#d4af37]" /> En Boca
-                </div>
-                <p className="mt-1 text-xs text-neutral-300">
-                  {selectedWine.tastingNotes.mouth}
-                </p>
-              </div>
-            </div>
-
-            {/* Maridaje Recomendado */}
-            <div className="mt-6">
-              <h4 className="font-serif text-lg font-bold text-white border-b border-white/10 pb-2 flex items-center gap-2">
-                <Utensils className="h-4 w-4 text-[#d4af37]" />
-                Maridajes Sugeridos
-              </h4>
-              <ul className="mt-3 grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-neutral-300">
-                {selectedWine.pairing.map((item, idx) => (
-                  <li key={idx} className="flex items-center gap-2">
-                    <CheckCircle2 className="h-4 w-4 text-[#d4af37] shrink-0" />
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            {/* Modal Footer CTA */}
-            <div className="mt-8 pt-6 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4">
-              <div>
-                <span className="text-xs text-neutral-400">Precio Botella:</span>
-                <div className="font-serif text-2xl font-bold text-white">
-                  {selectedWine.price}
+                  {/* Botón WhatsApp de Acción Inmediata */}
+                  <a
+                    href={landingData.createWhatsAppLink(featuredWine.name, selectedPack.qty)}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-5 w-full flex items-center justify-center gap-2 rounded-2xl bg-gradient-to-r from-[#651025] via-[#881632] to-[#b01e42] py-4 text-sm font-bold uppercase tracking-wider text-white shadow-xl shadow-[#651025]/50 transition duration-300 hover:scale-[1.01] active:scale-[0.99]"
+                  >
+                    <MessageCircle className="h-4 w-4 text-[#f7e2a9]" />
+                    <span>Pedir {selectedPack.label} por WhatsApp</span>
+                  </a>
                 </div>
               </div>
-
-              <a
-                href={landingData.createWhatsAppLink(selectedWine.name, 2)}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-[#651025] to-[#881632] px-6 py-3 text-sm font-semibold text-white shadow-lg hover:from-[#881632] hover:to-[#b01e42]"
-              >
-                <MessageCircle className="h-4 w-4 text-[#f7e2a9]" />
-                <span>Pedir este vino por WhatsApp</span>
-              </a>
             </div>
           </div>
-        </div>
-      )}
+        )}
+
+        {/* Si en el futuro se agregan más vinos en landingData.ts (> 1), se despliegan automáticamente aquí */}
+        {wines.length > 1 && (
+          <div className="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {wines.slice(1).map((wine) => (
+              <div
+                key={wine.id}
+                className="rounded-3xl border border-white/10 bg-[#151013] p-6 shadow-xl"
+              >
+                <h4 className="font-serif text-xl font-bold text-white">{wine.name}</h4>
+                <p className="text-xs text-neutral-400 mt-1">{wine.variety}</p>
+                <div className="font-serif text-2xl font-bold text-white mt-4">{wine.price}</div>
+              </div>
+            ))}
+          </div>
+        )}
+      </div>
     </section>
   );
 }

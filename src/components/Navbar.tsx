@@ -28,8 +28,8 @@ export default function Navbar() {
       <header
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           isScrolled
-            ? "bg-[#0b0809]/95 backdrop-blur-md border-b border-[#420a17]/60 shadow-2xl py-3"
-            : "bg-gradient-to-b from-black/90 via-black/50 to-transparent py-5"
+            ? "bg-[#0b0809]/95 backdrop-blur-xl border-b border-[#651025]/60 shadow-2xl py-3"
+            : "bg-[#0b0809]/85 backdrop-blur-md border-b border-white/10 py-4"
         }`}
       >
         <div className="mx-auto flex max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">

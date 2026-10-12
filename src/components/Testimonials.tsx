@@ -25,38 +25,62 @@ export default function Testimonials() {
         </div>
 
         <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8">
-          {testimonials.map((t) => (
-            <div
-              key={t.id}
-              className="relative flex flex-col justify-between rounded-3xl border border-white/10 bg-[#151013] p-8 shadow-xl transition duration-300 hover:border-[#d4af37]/40 hover:-translate-y-1 hover:shadow-2xl"
-            >
-              <Quote className="h-8 w-8 text-[#d4af37]/30 mb-4" />
+          {testimonials.map((t, idx) => {
+            const badges = [
+              "🏆 Elección Sommelier",
+              "🥂 Pack x6 Fiesta",
+              "✨ Compra Verificada",
+            ];
+            const initials = t.author
+              .split(" ")
+              .map((n) => n[0])
+              .join("");
 
-              {/* Star Rating */}
-              <div className="flex gap-1 mb-4">
-                {Array.from({ length: t.rating }).map((_, i) => (
-                  <Star
-                    key={i}
-                    className="h-4 w-4 fill-[#d4af37] text-[#d4af37]"
-                  />
-                ))}
-              </div>
+            return (
+              <div
+                key={t.id}
+                className="group relative flex flex-col justify-between rounded-3xl border border-white/10 bg-[#151013] p-8 shadow-xl transition-all duration-300 hover:border-[#d4af37]/50 hover:-translate-y-1 hover:shadow-2xl hover:shadow-[#651025]/20"
+              >
+                <div>
+                  <div className="flex items-center justify-between mb-4">
+                    <Quote className="h-7 w-7 text-[#d4af37]/30" />
+                    <span className="rounded-full border border-[#d4af37]/30 bg-[#420a17]/40 px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider text-[#f7e2a9]">
+                      {badges[idx % badges.length]}
+                    </span>
+                  </div>
 
-              {/* Quote */}
-              <p className="flex-1 text-sm text-neutral-300 leading-relaxed font-light italic">
-                “{t.quote}”
-              </p>
+                  {/* Star Rating */}
+                  <div className="flex gap-1 mb-4">
+                    {Array.from({ length: t.rating }).map((_, i) => (
+                      <Star
+                        key={i}
+                        className="h-4 w-4 fill-[#d4af37] text-[#d4af37]"
+                      />
+                    ))}
+                  </div>
 
-              {/* Author Info */}
-              <div className="mt-6 pt-6 border-t border-white/10">
-                <div className="font-serif text-base font-bold text-white">
-                  {t.author}
+                  {/* Quote */}
+                  <p className="text-sm text-neutral-300 leading-relaxed font-light italic">
+                    “{t.quote}”
+                  </p>
                 </div>
-                <div className="text-xs text-[#d4af37]">{t.role}</div>
-                <div className="text-[11px] text-neutral-500 mt-0.5">{t.city}</div>
+
+                {/* Author Info with Initial Avatar */}
+                <div className="mt-6 pt-6 border-t border-white/10 flex items-center gap-3">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-br from-[#651025] to-[#420a17] border border-[#d4af37]/40 text-xs font-bold text-[#f7e2a9] shrink-0">
+                    {initials}
+                  </div>
+                  <div>
+                    <div className="font-serif text-base font-bold text-white">
+                      {t.author}
+                    </div>
+                    <div className="text-xs text-[#d4af37]">{t.role}</div>
+                    <div className="text-[11px] text-neutral-500 mt-0.5">{t.city}</div>
+                  </div>
+                </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>
