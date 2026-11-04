@@ -6,10 +6,6 @@ import { landingData } from "@/data/landingData";
 export default function FloatingWhatsApp() {
   return (
     <aside aria-label="Contacto directo" className="fixed bottom-6 right-6 z-40 flex items-center gap-3">
-      {/* Tooltip badge */}
-      <span className="hidden sm:inline-flex rounded-full border border-[#d4af37]/40 bg-[#151013]/90 backdrop-blur-md px-3.5 py-1.5 text-xs font-medium text-[#f7e2a9] shadow-lg shadow-black/50">
-        ¿Hablamos por WhatsApp? 🍷
-      </span>
 
       {/* Floating button */}
       <a

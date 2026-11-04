@@ -82,8 +82,8 @@ export const landingData = {
   contact: {
     instagramUrl: "https://www.instagram.com/vinos_alebrije",
     instagramHandle: "@vinos_alebrije",
-    whatsappNumber: "+56912345678", // Reemplazar con el número real (con código de país)
-    whatsappDisplay: "+56 9 1234 5678",
+    whatsappNumber: "+56 927 253 084", // Reemplazar con el número real (con código de país)
+    whatsappDisplay: "+56 927 253 084",
     email: "contacto@vinosalebrije.com",
     address: "Valle Central, Chile",
     schedule: "Atención y Pedidos: Lunes a Sábado de 10:00 a 20:00 hrs",

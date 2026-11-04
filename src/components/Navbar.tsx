@@ -78,16 +78,6 @@ export default function Navbar() {
             >
               <InstagramIcon className="h-4 w-4" />
             </a>
-
-            <a
-              href={landingData.createWhatsAppLink()}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-[#651025] to-[#881632] px-5 py-2.5 text-xs font-semibold tracking-wider uppercase text-white shadow-lg shadow-[#651025]/30 transition duration-200 hover:from-[#881632] hover:to-[#b01e42] hover:scale-105 active:scale-95"
-            >
-              <MessageCircle className="h-4 w-4 text-[#f7e2a9]" />
-              <span>Pedir por WhatsApp</span>
-            </a>
           </div>
 
           {/* Mobile Menu Button */}
