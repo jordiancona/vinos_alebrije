@@ -97,7 +97,7 @@ export const landingData = {
     { label: "El Espíritu", href: "#historia" },
     { label: "Nuestros Vinos", href: "#vinos" },
     { label: "El Ritual", href: "#ritual" },
-    { label: "Cata & Maridaje", href: "#maridaje" },
+    //{ label: "Cata & Maridaje", href: "#maridaje" },
     { label: "Opiniones", href: "#testimonios" },
     { label: "Preguntas", href: "#preguntas" },
     { label: "Contacto", href: "#contacto" },

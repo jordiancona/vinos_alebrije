@@ -33,9 +33,6 @@ export default function Home() {
       {/* El Ritual del Frizzante: 4 pasos para servir y disfrutar */}
       <FrizzanteRitual />
 
-      {/* Guía gastronómica interactiva de maridajes y sommeliers */}
-      <PairingSection />
-
       {/* Opiniones y testimonios de clientes */}
       <Testimonials />
 
