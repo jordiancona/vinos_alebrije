@@ -4,6 +4,7 @@ const nextConfig: NextConfig = {
   /* config options here */
   devIndicators: false,
   cacheComponents: true,
+  output: "export",
   partialPrefetching: true,
   turbopack: {
     rules: {
