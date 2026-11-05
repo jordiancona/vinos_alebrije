@@ -12,12 +12,12 @@ export default function ContactSection() {
   const [city, setCity] = useState("");
   const [customNotes, setCustomNotes] = useState("");
 
+  const phone = contact.whatsappNumber.replace(/[^0-9]/g, "");
+  const msg = `¡Hola Vinos Alebrije! 🍷\nMe gustaría hacer un pedido:\n\n• Vino: *${selectedWine}*\n• Cantidad: *${quantity} botella(s)*\n${city ? `• Destino/Ciudad: *${city}*\n` : ""}${customNotes ? `• Nota especial: ${customNotes}\n` : ""}\n¿Podrían indicarme el total y los datos de transferencia o pago? ¡Gracias!`;
+  const whatsappOrderLink = `https://wa.me/${phone}?text=${encodeURIComponent(msg)}`;
+
   const handleWhatsAppOrder = (e: React.FormEvent) => {
     e.preventDefault();
-    const phone = contact.whatsappNumber.replace(/[^0-9]/g, "");
-    const msg = `¡Hola Vinos Alebrije! 🍷\nMe gustaría hacer un pedido:\n\n• Vino: *${selectedWine}*\n• Cantidad: *${quantity} botella(s)*\n${city ? `• Destino/Ciudad: *${city}*\n` : ""}${customNotes ? `• Nota especial: ${customNotes}\n` : ""}\n¿Podrían indicarme el total y los datos de transferencia o pago? ¡Gracias!`;
-    
-    window.open(`https://wa.me/${phone}?text=${encodeURIComponent(msg)}`, "_blank");
   };
 
   return (
@@ -131,13 +131,15 @@ export default function ContactSection() {
               </div>
 
               {/* Botón WhatsApp */}
-              <button
-                type="submit"
+              <a
+                href={whatsappOrderLink}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-full flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-[#651025] to-[#881632] py-4 text-sm font-semibold uppercase tracking-wider text-white shadow-xl shadow-[#651025]/40 transition duration-300 hover:from-[#881632] hover:to-[#b01e42] hover:scale-[1.01]"
               >
                 <MessageCircle className="h-4 w-4 text-[#f7e2a9]" />
                 <span>Enviar Pedido a WhatsApp</span>
-              </button>
+              </a>
 
               <p className="text-center text-[11px] text-neutral-500">
                 Al presionar, se abrirá tu aplicación de WhatsApp con el mensaje estructurado listo para enviar.

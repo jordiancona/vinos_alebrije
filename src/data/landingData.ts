@@ -82,8 +82,8 @@ export const landingData = {
   contact: {
     instagramUrl: "https://www.instagram.com/vinos_alebrije",
     instagramHandle: "@vinos_alebrije",
-    whatsappNumber: "+56 927 253 084", // Reemplazar con el número real (con código de país)
-    whatsappDisplay: "+56 927 253 084",
+    whatsappNumber: "+56 9 2725 3084", // Reemplazar con el número real (con código de país)
+    whatsappDisplay: "+56 9 2725 3084",
     email: "contacto@vinosalebrije.com",
     address: "Valle Central, Chile",
     schedule: "Atención y Pedidos: Lunes a Sábado de 10:00 a 20:00 hrs",
@@ -369,7 +369,7 @@ export const landingData = {
   // 11. GENERADOR DE MENSAJE PARA WHATSAPP
   // ----------------------------------------------------------------------------
   createWhatsAppLink: (productName?: string, quantity: number = 2) => {
-    const phone = "56912345678"; // Reemplazar con el número del dueño
+    const phone = "+56927253084"; // Reemplazar con el número del dueño
     const text = productName
       ? `¡Hola Vinos Alebrije! 🍷 Me gustaría hacer un pedido de ${quantity} botella(s) de *${productName}*. ¿Podrían confirmarme disponibilidad y costo de envío?`
       : `¡Hola Vinos Alebrije! 🍷 Quisiera consultar por su catálogo de vinos frizzante y opciones de despacho. ¡Muchas gracias!`;
