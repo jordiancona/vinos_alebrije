@@ -93,8 +93,7 @@ export default function ContactSection() {
                         quantity === q.id
                           ? "bg-[#651025] text-white border border-[#b01e42] shadow-lg shadow-[#651025]/40 scale-102"
                           : "border border-neutral-800 bg-neutral-900/60 text-neutral-400 hover:text-white"
-                      }`}
-                    >
+                      }`}>
                       <div className="text-xs font-bold uppercase tracking-wider">{q.label}</div>
                       <div className="text-[12px] text-neutral-400 mt-0.5">{q.desc}</div>
                     </button>
@@ -112,8 +111,7 @@ export default function ContactSection() {
                   placeholder="Ej: Las Condes, Santiago / Viña del Mar / etc."
                   value={city}
                   onChange={(e) => setCity(e.target.value)}
-                  className="w-full rounded-xl border border-neutral-700 bg-neutral-900/90 px-4 py-3 text-sm text-white placeholder-neutral-500 focus:border-[#d4af37] focus:outline-none"
-                />
+                  className="w-full rounded-xl border border-neutral-700 bg-neutral-900/90 px-4 py-3 text-sm text-white placeholder-neutral-500 focus:border-[#d4af37] focus:outline-none"/>
               </div>
 
               {/* Comentarios o Dudas */}
