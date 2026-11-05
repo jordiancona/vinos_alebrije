@@ -378,17 +378,17 @@ export const landingData = {
     {
       id: "carousel-1",
       caption: "Burbujas al atardecer. Cada botella guarda un instante irrepetible.",
-      imageUrl: "/images/alebrije_inst_1.jpg",
+      imageUrl: "/images/alebrije_tipos_1.jpg",
     },
     {
       id: "carousel-2",
       caption: "El servicio perfecto: 6° a 8°C de frescura pura.",
-      imageUrl: "/images/alebrije_inst_2.jpg",
+      imageUrl: "/images/alebrije_rose_2.jpg",
     },
     {
       id: "carousel-3",
       caption: "La cordillera vigila nuestros viñedos.",
-      imageUrl: "/images/alebrije_inst_4.jpg",
+      imageUrl: "/images/alebrije_uvas_3.jpg",
     },
     {
       id: "carousel-4",
@@ -402,8 +402,8 @@ export const landingData = {
     },
     {
       id: "carousel-6",
-      caption: "El ritual del frizzante: burbujas vivas en cada copa.",
-      imageUrl: "/images/ritual-pour.jpg",
+      caption: "El ritual del frizzante: burbujas vivas en cada sorbo.",
+      imageUrl: "/images/alebrije_inst_1.jpg",
     },
   ] as CarouselImage[],
 

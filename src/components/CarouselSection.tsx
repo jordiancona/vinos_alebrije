@@ -5,7 +5,7 @@ import { useState, useEffect, useRef, useCallback } from "react";
 import { ChevronLeft, ChevronRight, Play, Pause, Sparkles } from "lucide-react";
 import { landingData } from "@/data/landingData";
 
-const AUTO_PLAY_INTERVAL = 5500; // 5.5s por slide
+const AUTO_PLAY_INTERVAL = 4000; // 4s por slide
 
 export default function CarouselSection() {
   const { carousel } = landingData;
@@ -117,7 +117,7 @@ export default function CarouselSection() {
           </h2>
           <div className="mx-auto mt-4 h-0.5 w-24 bg-gradient-to-r from-transparent via-[#d4af37] to-transparent" />
           <p className="mt-5 text-base sm:text-lg text-neutral-300 font-light max-w-2xl mx-auto leading-relaxed">
-            Una mirada exclusiva a la mística, el terroir y la pasión detrás de cada botella de Vinos Alebrije.
+            Una mirada exclusiva a la mística, el terroir y la pasión detrás de cada botella de <span className="text-[#d4af37]">Vinos Alebrije</span>.
           </p>
         </div>
 
@@ -267,33 +267,6 @@ export default function CarouselSection() {
             </button>
             <span className="hidden sm:inline text-neutral-500">• Desliza o usa las flechas del teclado</span>
           </div>
-        </div>
-
-        {/* Tira de Miniaturas (Thumbnails) Interactiva */}
-        <div className="mt-6 flex justify-center items-center gap-2 sm:gap-3 overflow-x-auto py-2 px-2 max-w-4xl mx-auto scrollbar-none">
-          {carousel.map((item, idx) => {
-            const isActive = idx === activeIndex;
-            return (
-              <button
-                key={`thumb-${item.id}`}
-                onClick={() => goToSlide(idx)}
-                aria-label={`Ir a la imagen ${idx + 1}: ${item.caption}`}
-                className={`relative flex-shrink-0 w-16 sm:w-20 md:w-24 aspect-[16/10] rounded-xl overflow-hidden transition-all duration-300 ${
-                  isActive
-                    ? "ring-2 ring-[#d4af37] ring-offset-2 ring-offset-[#0b0809] scale-105 shadow-lg shadow-[#651025]/50 opacity-100"
-                    : "opacity-40 hover:opacity-85 grayscale-[30%] hover:grayscale-0 scale-95 border border-white/10"
-                }`}
-              >
-                <Image
-                  src={item.imageUrl}
-                  alt={`Miniatura ${idx + 1}`}
-                  fill
-                  sizes="120px"
-                  className="object-cover"
-                />
-              </button>
-            );
-          })}
         </div>
       </div>
     </section>
