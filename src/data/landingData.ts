@@ -383,12 +383,12 @@ export const landingData = {
     {
       id: "carousel-2",
       caption: "El servicio perfecto: 6° a 8°C de frescura pura.",
-      imageUrl: "/images/alebrije_rose_2.jpg",
+      imageUrl: "/images/alebrije_rose_2.JPG",
     },
     {
       id: "carousel-3",
       caption: "La cordillera vigila nuestros viñedos.",
-      imageUrl: "/images/alebrije_uvas_3.jpg",
+      imageUrl: "/images/alebrije_uvas_3.JPG",
     },
     {
       id: "carousel-4",
