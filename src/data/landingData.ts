@@ -185,7 +185,7 @@ export const landingData = {
       badge: "Insignia de la Casa",
       price: "$2.500 CLP",
       priceNote: "Por lata / Descuento por caja de 6",
-      image: "/images/alebrije_inst_8.jpeg",
+      image: "/images/alebrije_tinto_1.jpg",
       category: "tinto",
       specs: {
         alcohol: "11.5% Vol",
@@ -393,12 +393,12 @@ export const landingData = {
     {
       id: "carousel-4",
       caption: "Uvas cosechadas a mano en el valle.",
-      imageUrl: "/images/alebrije_inst_3.jpg",
+      imageUrl: "/images/alebrije_uvas_2.jpg",
     },
     {
       id: "carousel-5",
       caption: "Manos artesanas que seleccionan los racimos más puros.",
-      imageUrl: "/images/alebrije_inst_6.jpg",
+      imageUrl: "/images/grapes-harvest.jpg",
     },
     {
       id: "carousel-6",
