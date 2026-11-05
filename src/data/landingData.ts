@@ -58,6 +58,12 @@ export interface InstagramPost {
   link: string;
 }
 
+export interface CarouselImage {
+  id: string;
+  imageUrl: string;
+  caption: string;
+}
+
 export const landingData = {
   // ----------------------------------------------------------------------------
   // 1. INFORMACIÓN GENERAL Y MARCA
@@ -366,7 +372,43 @@ export const landingData = {
   ] as FAQItem[],
 
   // ----------------------------------------------------------------------------
-  // 11. GENERADOR DE MENSAJE PARA WHATSAPP
+  // 11. CARRUSEL DE FOTOS (6 IMÁGENES)
+  // ----------------------------------------------------------------------------
+  carousel: [
+    {
+      id: "carousel-1",
+      caption: "Burbujas al atardecer. Cada botella guarda un instante irrepetible.",
+      imageUrl: "/images/alebrije_inst_1.jpg",
+    },
+    {
+      id: "carousel-2",
+      caption: "El servicio perfecto: 6° a 8°C de frescura pura.",
+      imageUrl: "/images/alebrije_inst_2.jpg",
+    },
+    {
+      id: "carousel-3",
+      caption: "La cordillera vigila nuestros viñedos.",
+      imageUrl: "/images/alebrije_inst_4.jpg",
+    },
+    {
+      id: "carousel-4",
+      caption: "Uvas cosechadas a mano en el valle.",
+      imageUrl: "/images/alebrije_inst_3.jpg",
+    },
+    {
+      id: "carousel-5",
+      caption: "Manos artesanas que seleccionan los racimos más puros.",
+      imageUrl: "/images/alebrije_inst_6.jpg",
+    },
+    {
+      id: "carousel-6",
+      caption: "El ritual del frizzante: burbujas vivas en cada copa.",
+      imageUrl: "/images/ritual-pour.jpg",
+    },
+  ] as CarouselImage[],
+
+  // ----------------------------------------------------------------------------
+  // 12. GENERADOR DE MENSAJE PARA WHATSAPP
   // ----------------------------------------------------------------------------
   createWhatsAppLink: (productName?: string, quantity: number = 2) => {
     const phone = "+56927253084"; // Reemplazar con el número del dueño

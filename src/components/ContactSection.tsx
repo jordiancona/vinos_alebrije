@@ -59,8 +59,7 @@ export default function ContactSection() {
                 <select
                   value={selectedWine}
                   onChange={(e) => setSelectedWine(e.target.value)}
-                  className="w-full rounded-xl border border-neutral-700 bg-neutral-900/90 px-4 py-3 text-sm text-white focus:border-[#d4af37] focus:outline-none"
-                >
+                  className="w-full rounded-xl border border-neutral-700 bg-neutral-900/90 px-4 py-3 text-sm text-white focus:border-[#d4af37] focus:outline-none">
                   {wines.map((wine) => (
                     <option key={wine.id} value={wine.name}>
                       {wine.name} ({wine.price})

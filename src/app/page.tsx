@@ -7,6 +7,7 @@ import FrizzanteRitual from "@/components/FrizzanteRitual";
 import PairingSection from "@/components/PairingSection";
 import Testimonials from "@/components/Testimonials";
 import InstagramFeed from "@/components/InstagramFeed";
+import CarouselSection from "@/components/CarouselSection";
 import FAQSection from "@/components/FAQSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
@@ -26,6 +27,9 @@ export default function Home() {
 
       {/* Filosofía de la marca: Arte • Tierra • Vino */}
       <StorySection />
+
+      {/* Galería de fotos: 6 imágenes en carrusel */}
+      <CarouselSection />
 
       {/* Catálogo interactivo de vinos frizzante con filtros y notas de cata */}
       <WineCatalog />
