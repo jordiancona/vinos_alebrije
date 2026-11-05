@@ -84,7 +84,7 @@ export default function InstagramFeed() {
             </div>
           </div>
           <span className="text-xs font-semibold text-[#d4af37] tracking-wider uppercase">
-            @vinos_alebrije
+            {contact.instagramHandle}
           </span>
         </div>
       </div>
