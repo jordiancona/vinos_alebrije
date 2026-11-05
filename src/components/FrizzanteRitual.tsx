@@ -48,11 +48,11 @@ export default function FrizzanteRitual() {
           <div className="lg:col-span-5 relative">
             <div className="relative rounded-3xl overflow-hidden border border-white/10 shadow-2xl shadow-black aspect-[3/4] group">
               <Image
-                src="/images/ritual-pour.jpg"
+                src="/images/alebrije_inst_7.jpeg"
                 alt="Servicio del vino frizzante Alebrije en copa de cristal"
                 fill
                 className="object-cover transition-transform duration-700 group-hover:scale-105"
-              />
+                />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
 
               <div className="absolute bottom-6 left-6 right-6 rounded-2xl border border-white/10 bg-[#0b0809]/85 backdrop-blur-md p-5 text-center">

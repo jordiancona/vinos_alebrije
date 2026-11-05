@@ -47,26 +47,9 @@ export default function Hero() {
         </h1>
 
         {/* Subtitle with punchy, youthful flow */}
-        <p className="mx-auto mt-6 max-w-2xl text-base sm:text-lg md:text-xl text-neutral-300 leading-relaxed font-light">
+        <p className="mx-auto mt-8 max-w-2xl text-base sm:text-lg md:text-xl text-neutral-300 leading-relaxed font-light">
           {hero.subtitle}
         </p>
-
-        {/* Dynamic Lifestyle Tags */}
-        <div className="mt-6 flex flex-wrap items-center justify-center gap-2 text-xs">
-          {[
-            "🌅 Atardeceres & Terrazas",
-            "🥂 Cero Poses, Puro Disfrute",
-            "🍇 Uva Frizzante Chilena",
-            "✨ Frescura Efervescente",
-          ].map((tag, i) => (
-            <span
-              key={i}
-              className="rounded-full border border-white/10 bg-white/[0.04] px-3.5 py-1 text-neutral-300 backdrop-blur-sm transition hover:border-[#d4af37]/40 hover:text-white"
-            >
-              {tag}
-            </span>
-          ))}
-        </div>
 
         {/* CTA Buttons */}
         <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">

@@ -66,9 +66,6 @@ export default function StorySection() {
                       <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-gradient-to-br from-[#420a17] to-[#151013] border border-[#651025]/60 group-hover:scale-110 transition-transform">
                         {getPillarIcon(pillar.icon)}
                       </div>
-                      <span className="text-[10px] font-bold uppercase tracking-wider text-[#d4af37]/70 rounded-full border border-white/5 bg-white/[0.02] px-2 py-0.5">
-                        {idx === 0 ? "Creatividad" : idx === 1 ? "Chile 100%" : "Aguja Viva"}
-                      </span>
                     </div>
                     <h3 className="mt-4 font-serif text-xl font-bold text-white group-hover:text-[#f7e2a9] transition-colors">
                       {pillar.title}
@@ -86,7 +83,6 @@ export default function StorySection() {
 
             {/* Quote Block */}
             <div className="relative rounded-2xl border border-[#420a17] bg-gradient-to-r from-[#200c14] to-[#151013] p-6 shadow-lg">
-              <Quote className="absolute top-4 right-4 h-7 w-7 text-[#d4af37]/20" />
               <p className="font-serif italic text-base sm:text-lg text-[#f7e2a9] leading-relaxed">
                 {story.quote.text}
               </p>
@@ -108,8 +104,8 @@ export default function StorySection() {
               <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent" />
 
               {/* Floating Badge on Photo */}
-              <div className="absolute bottom-6 left-6 right-6 rounded-2xl border border-white/10 bg-[#0b0809]/90 backdrop-blur-md p-5 shadow-2xl">
-                <div className="flex items-center gap-3">
+              <div className="absolute bottom-5 left-6 right-6 rounded-2xl border border-white/10 bg-[#0b0809]/90 backdrop-blur-md p-5 shadow-2xl">
+                <div className="flex items-center gap-2">
                   <div className="h-11 w-11 rounded-full border border-[#d4af37] overflow-hidden relative shrink-0">
                     <Image
                       src={landingData.brand.logo}
@@ -120,23 +116,10 @@ export default function StorySection() {
                   </div>
                   <div>
                     <h4 className="font-serif text-sm font-bold text-white">
-                      Terroir Andino Seleccionado
-                    </h4>
-                    <p className="text-xs text-neutral-400">
                       Uvas cuidadas con aguas de deshielo cordillerano
-                    </p>
+                    </h4>
                   </div>
                 </div>
-              </div>
-            </div>
-
-            {/* Inset Decorative Element */}
-            <div className="hidden sm:block absolute -bottom-5 -left-5 rounded-2xl border border-[#d4af37]/40 bg-[#151013] p-4 shadow-2xl">
-              <span className="text-xs font-bold text-[#f7e2a9] tracking-wider uppercase">
-                Edición de Autor
-              </span>
-              <div className="text-xs text-neutral-400 mt-0.5">
-                Producción en lotes pequeños
               </div>
             </div>
           </div>

@@ -62,32 +62,14 @@ export default function WineCatalog() {
                 {/* Glow de la botella */}
                 <div className="absolute inset-0 bg-radial-[at_center_center] from-[#881632]/40 via-transparent to-transparent blur-2xl" />
 
-                <div className="relative h-80 sm:h-96 w-full max-w-xs overflow-hidden rounded-2xl bg-gradient-to-b from-[#20141a] to-[#0d090b] border border-white/10 shadow-2xl group flex items-center justify-center p-4">
+                <div className="relative h-90 sm:h-96 w-full max-w-xs overflow-hidden rounded-2xl bg-gradient-to-b from-[#20141a] to-[#0d090b] border border-white/10 shadow-2xl group flex items-center justify-center p-4">
                   <Image
                     src={featuredWine.image}
                     alt={featuredWine.name}
                     fill
-                    className="object-cover transition-transform duration-700 group-hover:scale-105"
+                    className="object-cover transition-transform duration-700 group-hover:scale-120"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#151013] via-transparent to-transparent opacity-60" />
-
-                  {/* Stamp flotante sobre la foto */}
-                  <div className="absolute top-4 left-4 rounded-full border border-[#d4af37]/60 bg-[#151013]/90 px-3 py-1 text-[11px] font-bold tracking-wider text-[#f7e2a9] uppercase shadow-lg">
-                    {featuredWine.badge || "Insignia de la Casa"}
-                  </div>
-                </div>
-
-                {/* Chips rápidos debajo de la botella */}
-                <div className="mt-4 flex flex-wrap justify-center gap-2">
-                  <span className="rounded-full border border-white/10 bg-white/[0.04] px-3 py-1 text-xs text-neutral-300 font-medium">
-                    🍷 {featuredWine.specs.alcohol}
-                  </span>
-                  <span className="rounded-full border border-white/10 bg-white/[0.04] px-3 py-1 text-xs text-neutral-300 font-medium">
-                    🧊 {featuredWine.specs.temperature}
-                  </span>
-                  <span className="rounded-full border border-white/10 bg-white/[0.04] px-3 py-1 text-xs text-neutral-300 font-medium">
-                    🫧 Frizzante Natural
-                  </span>
                 </div>
               </div>
 
@@ -114,7 +96,7 @@ export default function WineCatalog() {
                   {/* Vibe / Sensación Meters */}
                   <div className="mt-6 grid grid-cols-2 sm:grid-cols-4 gap-2 text-center text-xs">
                     <div className="rounded-xl border border-white/5 bg-white/[0.02] p-2.5">
-                      <div className="text-[#f7e2a9] font-bold">12% Vol</div>
+                      <div className="text-[#f7e2a9] font-bold">11.5% Vol</div>
                       <div className="text-[10px] text-neutral-400 mt-0.5">Grado Óptimo</div>
                     </div>
                     <div className="rounded-xl border border-white/5 bg-white/[0.02] p-2.5">
@@ -137,7 +119,7 @@ export default function WineCatalog() {
                     {[
                       "🌅 Atardecer en Terraza",
                       "🍕 Pizza & Burgers",
-                      "🥂 Brindis Relajado",
+                      "🥂 Brindis",
                       "🧀 Tablas de Queso",
                     ].map((m, i) => (
                       <span
@@ -258,8 +240,7 @@ export default function WineCatalog() {
                     href={landingData.createWhatsAppLink(featuredWine.name, selectedPack.qty)}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="mt-5 w-full flex items-center justify-center gap-2 rounded-2xl bg-gradient-to-r from-[#651025] via-[#881632] to-[#b01e42] py-4 text-sm font-bold uppercase tracking-wider text-white shadow-xl shadow-[#651025]/50 transition duration-300 hover:scale-[1.01] active:scale-[0.99]"
-                  >
+                    className="mt-5 w-full flex items-center justify-center gap-2 rounded-2xl bg-gradient-to-r from-[#651025] via-[#881632] to-[#b01e42] py-4 text-sm font-bold uppercase tracking-wider text-white shadow-xl shadow-[#651025]/50 transition duration-300 hover:scale-[1.01] active:scale-[0.99]">
                     <MessageCircle className="h-4 w-4 text-[#f7e2a9]" />
                     <span>Pedir {selectedPack.label} por WhatsApp</span>
                   </a>

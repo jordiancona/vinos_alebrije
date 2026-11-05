@@ -172,35 +172,65 @@ export const landingData = {
   // ----------------------------------------------------------------------------
   wines: [
     {
-      id: "alebrije-frizzante-rose",
-      name: "Alebrije Frizzante Rosé",
-      variety: "Vino Frizzante Rosado",
-      tagline: "Fresco, floral y deliciosamente seductor.",
+      id: "alebrije-frizzante-tinto",
+      name: "Alebrije Frizzante Tinto",
+      variety: "Vino Frizzante Tinto",
+      tagline: "Fresco, Intenso y deliciosamente seductor.",
       badge: "Insignia de la Casa",
       price: "$14.990 CLP",
-      priceNote: "Por botella / Descuento por caja de 6",
-      image: "/images/alebrije_inst_6.jpg",
-      category: "rose",
+      priceNote: "Por lata / Descuento por caja de 6",
+      image: "/images/alebrije_inst_8.jpeg",
+      category: "tinto",
       specs: {
-        alcohol: "12% Vol",
+        alcohol: "11.5% Vol",
         temperature: "6°C - 8°C",
         sparkle: "Frizzante Natural (Perlage fino)",
         terroir: "Valle Central, Chile",
       },
       tastingNotes: {
-        view: "Tonalidad rosa frambuesa brillante con reflejos violáceos y corona de burbujas vivaces.",
-        nose: "Intensos aromas a frutos rojos silvestres, fresa fresca, pétalos de rosa y sutil toque cítrico.",
+        view: "Tonalidad tinto, frambuesa brillante con reflejos violáceos y corona de burbujas vivaces.",
+        nose: "Intensos aromas a frutos rojos silvestres, fresa fresca y un presente toque cítrico.",
         mouth: "Entrada chispeante, golosa y refrescante. Equilibrada acidez con un final frutal prolongado.",
       },
       pairing: [
-        "Tablas de quesos suaves y frutos secos",
-        "Ceviches frescos y mariscos",
+        "Embutidos y carnes frías",
+        "Pizzas, lasaña, pastas o raviolis rellenos",
         "Tapas mediterráneas y bruschettas",
         "Postres ligeros a base de frutos del bosque",
       ],
       description:
         "Nuestra creación más celebrada. Un vino frizzante que equilibra la dulzura natural de la uva con una acidez cítrica crujiente y una efervescencia chispeante que acompaña desde una tarde soleada hasta una cena íntima.",
     },
+    {
+      id: "alebrije-frizzante-rose",
+      name: "Alebrije Frizzante Rosé",
+      variety: "Vino Frizzante Rosé",
+      tagline: "Fresco, floral y con toques cítricos.",
+      badge: "El Favorito para Cualquier Temporada",
+      price: "$14.000 CLP",
+      priceNote: "Por lata / Descuento por caja de 6",
+      image: "/images/alebrije_inst_2.jpg",
+      category: "rose",
+      specs: {
+        alcohol: "12.5% Vol",
+        temperature: "6°C - 8°C",
+        sparkle: "Frizzante Natural (Perlage fino)",
+        terroir: "Valle Central, Chile",
+      },
+      tastingNotes: {
+        view: "Tonalidad tinto, frambuesa brillante con reflejos violáceos y corona de burbujas vivaces.",
+        nose: "Intensos aromas a frutos rojos silvestres, fresa fresca y un presente toque cítrico.",
+        mouth: "Entrada chispeante, golosa y refrescante. Equilibrada acidez con un final frutal prolongado.",
+      },
+      pairing: [
+        "Embutidos y carnes frías",
+        "Pizzas, lasaña, pastas o raviolis rellenos",
+        "Tapas mediterráneas y bruschettas",
+        "Postres ligeros a base de frutos del bosque",
+      ],
+      description:
+        "Nuestra creación más celebrada. Un vino frizzante que equilibra la dulzura natural de la uva con una acidez cítrica crujiente y una efervescencia chispeante que acompaña desde una tarde soleada hasta una cena íntima.",
+    }
   ] as WineProduct[],
 
   // ----------------------------------------------------------------------------
@@ -297,7 +327,7 @@ export const landingData = {
     },
     {
       id: "ig-4",
-      imageUrl: "/images/alebrije_inst_5.jpg",
+      imageUrl: "/images/alebrije_inst_6.jpg",
       caption: "Manos artesanas que seleccionan solo los racimos más puros en cosecha.",
       likes: "198",
       link: "https://www.instagram.com/vinos_alebrije",

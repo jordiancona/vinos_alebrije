@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { Heart, ExternalLink } from "lucide-react";
+import { Heart, ExternalLink, ArrowLeftSquareIcon, ArrowRight} from "lucide-react";
 import InstagramIcon from "@/components/icons/InstagramIcon";
 import { landingData } from "@/data/landingData";
 
@@ -24,7 +24,7 @@ export default function InstagramFeed() {
               La Vibra en Instagram
             </h2>
             <p className="mt-2 text-sm sm:text-base text-neutral-400 font-light max-w-xl">
-              Etiquétanos en tus historias con <strong className="text-[#f7e2a9] font-medium">#VinosAlebrije</strong> y comparte cómo disfrutas tus tardes de frizzante.
+              Etiquétanos en tus historias con <strong className="text-[#f7e2a9] font-medium">Vinos Alebrije</strong> y comparte cómo disfrutas tus tardes de frizzante.
             </p>
           </div>
 
@@ -61,16 +61,9 @@ export default function InstagramFeed() {
 
               {/* Hover Overlay */}
               <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/50 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100 flex flex-col justify-end p-4">
-                <div className="flex items-center gap-1.5 text-xs text-[#f7e2a9] font-bold mb-1.5">
-                  <Heart className="h-3.5 w-3.5 fill-[#d4af37] text-[#d4af37]" />
-                  <span>{post.likes} me gusta</span>
-                </div>
-                <p className="text-[11px] text-neutral-200 line-clamp-2 leading-relaxed font-light">
-                  {post.caption}
-                </p>
                 <div className="mt-2.5 text-[10px] text-[#f7e2a9] uppercase tracking-wider font-semibold flex items-center gap-1">
                   <span>Ver en Instagram</span>
-                  <span>→</span>
+                  <ArrowRight className="h-3 w-3 text-[#f7e2a9]" />
                 </div>
               </div>
             </a>
@@ -87,7 +80,7 @@ export default function InstagramFeed() {
             </div>
             <div>
               <p className="text-xs font-semibold text-white">Únete a la comunidad de amantes del Frizzante</p>
-              <p className="text-[11px] text-neutral-400">Publicamos recetas de cócteles ligeros, fechas de eventos y promociones exclusivas.</p>
+              <p className="text-[11px] text-neutral-400">Publicamos fechas de eventos y promociones exclusivas.</p>
             </div>
           </div>
           <span className="text-xs font-semibold text-[#d4af37] tracking-wider uppercase">

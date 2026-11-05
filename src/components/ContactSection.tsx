@@ -7,7 +7,7 @@ import { landingData } from "@/data/landingData";
 
 export default function ContactSection() {
   const { contact, wines } = landingData;
-  const [selectedWine, setSelectedWine] = useState(wines[0]?.name || "Alebrije Frizzante Rosé");
+  const [selectedWine, setSelectedWine] = useState(wines[0]?.name || "Alebrije Frizzante Tinto");
   const [quantity, setQuantity] = useState("2");
   const [city, setCity] = useState("");
   const [customNotes, setCustomNotes] = useState("");
@@ -222,7 +222,7 @@ export default function ContactSection() {
                 Embalaje Especial Anti-Impacto
               </h4>
               <p className="mt-2 text-xs text-neutral-300 font-light leading-relaxed">
-                Todas nuestras botellas viajan en cajas térmicas y reforzadas para garantizar que las burbujas y el vino lleguen en estado impecable a tu puerta.
+                Todas nuestras latas viajan en cajas adecuadas para garantizar que las burbujas y el vino lleguen en estado impecable a tu puerta.
               </p>
             </div>
           </div>
