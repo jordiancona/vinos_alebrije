@@ -22,7 +22,7 @@ export default function Footer() {
           {/* Brand Info */}
           <div className="md:col-span-5 space-y-4">
             <div className="flex items-center gap-3">
-              <div className="relative h-12 w-12 overflow-hidden rounded-full border border-[#d4af37]/60">
+              <div className="relative h-16 w-16 overflow-hidden rounded-full border border-[#d4af37]/60">
                 <Image
                   src={brand.logo}
                   alt={brand.name}
@@ -40,7 +40,7 @@ export default function Footer() {
               </div>
             </div>
 
-            <p className="text-neutral-400 font-light leading-relaxed max-w-sm">
+            <p className="text-neutral-400 font-light leading-relaxed max-w-base">
               {brand.description}
             </p>
 
@@ -50,8 +50,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Instagram"
-                className="flex h-9 w-9 items-center justify-center rounded-full border border-neutral-800 bg-neutral-900 text-neutral-300 hover:border-[#d4af37] hover:text-[#f7e2a9] transition"
-              >
+                className="flex h-9 w-9 items-center justify-center rounded-full border border-neutral-800 bg-neutral-900 text-neutral-300 hover:border-[#d4af37] hover:text-[#f7e2a9] transition">
                 <InstagramIcon className="h-4 w-4" />
               </a>
               <a
@@ -59,8 +58,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="WhatsApp"
-                className="flex h-9 w-9 items-center justify-center rounded-full border border-neutral-800 bg-neutral-900 text-neutral-300 hover:border-[#d4af37] hover:text-[#f7e2a9] transition"
-              >
+                className="flex h-9 w-9 items-center justify-center rounded-full border border-neutral-800 bg-neutral-900 text-neutral-300 hover:border-[#d4af37] hover:text-[#f7e2a9] transition">
                 <MessageCircle className="h-4 w-4" />
               </a>
             </div>

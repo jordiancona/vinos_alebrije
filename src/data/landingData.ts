@@ -70,7 +70,7 @@ export const landingData = {
       "Vino frizzante artesanal nacido al pie de la cordillera en Chile. Burbujas vivas, notas frescas y el misterio de la tierra en cada copa.",
     logo: "/images/logo.jpg",
     country: "Chile",
-    originRegion: "Valle del Maipo / Valle Central, Chile",
+    originRegion: "Valle del Cochagua, Chile",
     legalNotice: "El consumo excesivo de alcohol es perjudicial para la salud. Venta exclusiva a mayores de 18 años.",
     enableAgeGate: true, // Ponlo en false si deseas desactivar la ventana de confirmación de edad
   },
@@ -129,7 +129,7 @@ export const landingData = {
   story: {
     pretitle: "NUESTRA RAÍZ",
     title: "La Fusión de la Fantasía y la Vid",
-    lead: "Un alebrije es un ser fantástico nacido del arte y la imaginación. En Vinos Alebrije llevamos esa misma libertad creadora a cada botella.",
+    lead: "Un alebrije es un ser fantástico nacido del arte y la imaginación. En Vinos Alebrije llevamos esa misma libertad creadora a cada lata.",
     paragraphs: [
       "Al pie de la imponente cordillera de los Andes, en Chile, encontramos el terroir perfecto: suelos minerales, mañanas frescas y tardes soleadas que concentran aromas y vivacidad en la uva.",
       "A diferencia de los vinos tradicionales, nuestro método frizzante conserva una burbuja suave, juguetona y elegante. Es un vino ligero, vibrante y refrescante, pensado para brindar sin pretensiones pero con profundo carácter.",
@@ -177,7 +177,7 @@ export const landingData = {
       variety: "Vino Frizzante Tinto",
       tagline: "Fresco, Intenso y deliciosamente seductor.",
       badge: "Insignia de la Casa",
-      price: "$14.990 CLP",
+      price: "$2.500 CLP",
       priceNote: "Por lata / Descuento por caja de 6",
       image: "/images/alebrije_inst_8.jpeg",
       category: "tinto",
@@ -185,7 +185,7 @@ export const landingData = {
         alcohol: "11.5% Vol",
         temperature: "6°C - 8°C",
         sparkle: "Frizzante Natural (Perlage fino)",
-        terroir: "Valle Central, Chile",
+        terroir: "Valle Colchagua, Chile",
       },
       tastingNotes: {
         view: "Tonalidad tinto, frambuesa brillante con reflejos violáceos y corona de burbujas vivaces.",
@@ -261,7 +261,7 @@ export const landingData = {
       {
         step: "04",
         title: "El Brindis & Buena Vibra",
-        desc: "Choca las copas, comparte la risa y despierta tu espíritu. Un vino creado para conectar personas y celebrar el presente.",
+        desc: "Comparte con Alebrije y despierta tu espíritu. Un vino creado para conectar personas y celebrar el presente.",
         icon: "heart",
       },
     ],
@@ -283,7 +283,7 @@ export const landingData = {
     {
       id: "2",
       quote:
-        "Pedí dos cajas para el cumpleaños de mi pareja y fue el protagonista indiscutible. Las burbujas son súper finas y el diseño de la botella tiene un misterio que enamora a todos los invitados.",
+        "Pedí dos cajas para el cumpleaños de mi pareja y fue el protagonista indiscutible. Las burbujas son súper finas y el diseño de la lata tiene un misterio que enamora a todos los invitados.",
       author: "Rodrigo Morales",
       role: "Wine Enthusiast",
       city: "Viña del Mar",

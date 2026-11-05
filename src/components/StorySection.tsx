@@ -87,7 +87,7 @@ export default function StorySection() {
                 {story.quote.text}
               </p>
               <div className="mt-3 text-xs tracking-widest uppercase text-neutral-400 font-medium">
-                — {story.quote.author} ({story.quote.location})
+                — {story.quote.author}
               </div>
             </div>
           </div>
@@ -116,7 +116,7 @@ export default function StorySection() {
                   </div>
                   <div>
                     <h4 className="font-serif text-sm font-bold text-white">
-                      Uvas cuidadas con aguas de deshielo cordillerano
+                      Uvas orgánicas cultivadas del Valle de Colchagua
                     </h4>
                   </div>
                 </div>

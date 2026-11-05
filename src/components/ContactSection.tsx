@@ -53,7 +53,7 @@ export default function ContactSection() {
             <form onSubmit={handleWhatsAppOrder} className="space-y-5">
               {/* Selección de Vino */}
               <div>
-                <label className="block text-xs font-semibold uppercase tracking-wider text-neutral-300 mb-2">
+                <label className="block text-sm font-semibold uppercase tracking-wider text-neutral-300 mb-2">
                   Selecciona la Variedad
                 </label>
                 <select
@@ -96,7 +96,7 @@ export default function ContactSection() {
                       }`}
                     >
                       <div className="text-xs font-bold uppercase tracking-wider">{q.label}</div>
-                      <div className="text-[10px] text-neutral-400 mt-0.5">{q.desc}</div>
+                      <div className="text-[12px] text-neutral-400 mt-0.5">{q.desc}</div>
                     </button>
                   ))}
                 </div>
@@ -141,7 +141,7 @@ export default function ContactSection() {
                 <span>Enviar Pedido a WhatsApp</span>
               </a>
 
-              <p className="text-center text-[11px] text-neutral-500">
+              <p className="text-center text-sm text-neutral-500">
                 Al presionar, se abrirá tu aplicación de WhatsApp con el mensaje estructurado listo para enviar.
               </p>
             </form>
@@ -166,7 +166,7 @@ export default function ContactSection() {
                   </div>
                   <div>
                     <strong className="block text-white">Instagram Oficial:</strong>
-                    <span className="text-xs text-neutral-400 group-hover:underline">
+                    <span className="text-sm text-neutral-400 group-hover:underline">
                       {contact.instagramHandle}
                     </span>
                   </div>
@@ -176,14 +176,13 @@ export default function ContactSection() {
                   href={landingData.createWhatsAppLink()}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-start gap-3 text-neutral-300 hover:text-[#f7e2a9] transition group"
-                >
+                  className="flex items-start gap-3 text-neutral-300 hover:text-[#f7e2a9] transition group">
                   <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-neutral-900 border border-neutral-800 group-hover:border-[#d4af37]/50 shrink-0">
                     <MessageCircle className="h-5 w-5 text-[#d4af37]" />
                   </div>
                   <div>
                     <strong className="block text-white">WhatsApp Pedidos:</strong>
-                    <span className="text-xs text-neutral-400 group-hover:underline">
+                    <span className="text-sm text-neutral-400 group-hover:underline">
                       {contact.whatsappDisplay}
                     </span>
                   </div>
@@ -195,7 +194,7 @@ export default function ContactSection() {
                   </div>
                   <div>
                     <strong className="block text-white">Origen & Viñedos:</strong>
-                    <span className="text-xs text-neutral-400">
+                    <span className="text-sm text-neutral-400">
                       {landingData.brand.originRegion}
                     </span>
                   </div>
@@ -207,8 +206,20 @@ export default function ContactSection() {
                   </div>
                   <div>
                     <strong className="block text-white">Horario de Atención:</strong>
-                    <span className="text-xs text-neutral-400">
+                    <span className="text-sm text-neutral-400">
                       {contact.schedule}
+                    </span>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-3 text-neutral-300">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-neutral-900 border border-neutral-800 shrink-0">
+                    <Mail className="h-5 w-5 text-[#d4af37]" />
+                  </div>
+                  <div>
+                    <strong className="block text-white">Contacto correo:</strong>
+                    <span className="text-sm text-neutral-400">
+                      {contact.email}
                     </span>
                   </div>
                 </div>
@@ -223,7 +234,7 @@ export default function ContactSection() {
               <h4 className="mt-1 font-serif text-xl font-bold text-white">
                 Embalaje Especial Anti-Impacto
               </h4>
-              <p className="mt-2 text-xs text-neutral-300 font-light leading-relaxed">
+              <p className="mt-2 text-sm text-neutral-300 font-light leading-relaxed">
                 Todas nuestras latas viajan en cajas adecuadas para garantizar que las burbujas y el vino lleguen en estado impecable a tu puerta.
               </p>
             </div>

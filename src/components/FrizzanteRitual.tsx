@@ -109,7 +109,7 @@ export default function FrizzanteRitual() {
                 </div>
               </div>
 
-              <div className="mt-4 grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs text-neutral-300">
+              <div className="mt-4 grid grid-cols-1 sm:grid-cols-3 gap-3 text-sm text-neutral-300">
                 <div className="flex items-start gap-2.5 rounded-xl bg-white/[0.02] p-3 border border-white/5">
                   <CheckCircle2 className="h-4 w-4 text-[#d4af37] shrink-0 mt-0.5" />
                   <div>
@@ -127,8 +127,8 @@ export default function FrizzanteRitual() {
                 <div className="flex items-start gap-2.5 rounded-xl bg-white/[0.02] p-3 border border-white/5">
                   <CheckCircle2 className="h-4 w-4 text-[#d4af37] shrink-0 mt-0.5" />
                   <div>
-                    <strong className="text-white block font-medium">En Copa o con Hielo:</strong>
-                    Tómalo como más te guste, cuando más te guste.
+                    <strong className="text-white block font-medium">Listo para tomar:</strong>
+                    Tómalo en cualquier momento, sin esperar a que respire ni decante.
                   </div>
                 </div>
               </div>
@@ -144,7 +144,7 @@ export default function FrizzanteRitual() {
                 ].map((vibe, idx) => (
                   <span
                     key={idx}
-                    className="rounded-full border border-[#d4af37]/30 bg-[#151013] px-2.5 py-0.5 text-[11px] font-semibold text-[#f7e2a9]"
+                    className="rounded-full border border-[#d4af37]/30 bg-[#151013] px-2.5 py-0.5 text-[12px] font-semibold text-[#f7e2a9]"
                   >
                     {vibe}
                   </span>
