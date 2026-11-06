@@ -168,7 +168,7 @@ export const landingData = {
       author: "Vinos Alebrije",
       location: "Chile",
     },
-    imageHarvest: "/images/grapes-harvest.jpg",
+    imageHarvest: "/images/alebrije_uvas_1.jpg",
     imagePour: "/images/ritual-pour.jpg",
   },
 
