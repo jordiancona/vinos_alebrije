@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { Sparkles, Mountain, Wine, Quote, ArrowUpRight, Flame } from "lucide-react";
+import { Sparkles, Mountain, Wine } from "lucide-react";
 import { landingData } from "@/data/landingData";
 
 export default function StorySection() {

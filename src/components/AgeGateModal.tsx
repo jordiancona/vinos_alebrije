@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Image from "next/image";
-import { ShieldCheck, Wine } from "lucide-react";
+import { ShieldCheck } from "lucide-react";
 import { landingData } from "@/data/landingData";
 
 export default function AgeGateModal() {
@@ -10,26 +10,44 @@ export default function AgeGateModal() {
 
   useEffect(() => {
     if (!landingData.brand.enableAgeGate) return;
-    // Verificar si ya fue confirmado previamente
-    const verified = localStorage.getItem("vinos_alebrije_age_verified");
-    if (!verified) {
-      setIsOpen(true);
+    try {
+      // Verificar si ya fue confirmado de manera estricta
+      const verified = localStorage.getItem("vinos_alebrije_age_verified");
+      if (verified !== "true") {
+        const timer = setTimeout(() => setIsOpen(true), 10);
+        return () => clearTimeout(timer);
+      }
+    } catch {
+      // Si el navegador bloquea el almacenamiento (modo incógnito estricto), se muestra por precaución
+      const timer = setTimeout(() => setIsOpen(true), 10);
+      return () => clearTimeout(timer);
     }
   }, []);
 
   const handleConfirm = () => {
-    localStorage.setItem("vinos_alebrije_age_verified", "true");
+    try {
+      localStorage.setItem("vinos_alebrije_age_verified", "true");
+    } catch {
+      // Ignorar fallo si el almacenamiento está restringido
+    }
     setIsOpen(false);
   };
 
   const handleReject = () => {
-    window.location.href = "https://www.google.com";
+    // Redirección segura fuera del sitio sin guardar historial
+    window.location.replace("https://www.google.com");
   };
 
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/90 backdrop-blur-md animate-fade-in">
+    <div
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="age-gate-title"
+      aria-describedby="age-gate-desc"
+      className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/90 backdrop-blur-md animate-fade-in"
+    >
       <div className="relative w-full max-w-md overflow-hidden rounded-2xl border border-[#420a17] bg-[#151013] p-8 text-center shadow-2xl shadow-[#420a17]/40">
         {/* Glow de fondo */}
         <div className="absolute -top-24 -left-24 h-48 w-48 rounded-full bg-[#651025]/30 blur-3xl pointer-events-none" />
@@ -50,11 +68,11 @@ export default function AgeGateModal() {
           Verificación Legal
         </span>
 
-        <h2 className="mt-4 font-serif text-2xl font-bold tracking-wide text-white sm:text-3xl">
+        <h2 id="age-gate-title" className="mt-4 font-serif text-2xl font-bold tracking-wide text-white sm:text-3xl">
           ¿Eres mayor de edad?
         </h2>
 
-        <p className="mt-3 text-sm text-neutral-300 leading-relaxed">
+        <p id="age-gate-desc" className="mt-3 text-sm text-neutral-300 leading-relaxed">
           Para ingresar a <strong className="text-white">{landingData.brand.name}</strong> debes tener la edad legal para consumir bebidas alcohólicas en tu país (+18 años).
         </p>
 

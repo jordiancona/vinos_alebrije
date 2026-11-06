@@ -5,17 +5,11 @@ import Image from "next/image";
 import {
   MessageCircle,
   Sparkles,
-  Thermometer,
   Wine,
   Eye,
-  Info,
-  Utensils,
   CheckCircle2,
-  Clock,
-  Compass,
-  Zap,
 } from "lucide-react";
-import { landingData, WineProduct } from "@/data/landingData";
+import { landingData } from "@/data/landingData";
 
 export default function WineCatalog() {
   const { wines } = landingData;
@@ -46,7 +40,7 @@ export default function WineCatalog() {
           </h2>
           <div className="mx-auto mt-4 h-0.5 w-24 bg-gradient-to-r from-transparent via-[#d4af37] to-transparent" />
           <p className="mt-5 text-base sm:text-lg text-neutral-300 font-light leading-relaxed">
-            Un vino frizzante joven, vibrante y refrescante. Creado para quienes buscan disfrutar sin protocolos acartonados: burbujas vivaces, notas frutales y frescura pura.
+            Vinos frizzantes jóvenes, vibrantes y refrescantes. Creado para quienes buscan disfrutar sin protocolos acartonados: burbujas vivaces, notas frutales y frescura pura.
           </p>
         </div>
 
@@ -254,7 +248,10 @@ export default function WineCatalog() {
         {wines.length > 1 && (
           <div className="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 gap-8">
             {wines.slice(1).map((wine) => (
-              <div className="mt-16 mx-auto max-w-5xl overflow-hidden rounded-3xl border border-white/10 bg-[#151013]/90 shadow-2xl backdrop-blur-xl relative">
+              <div
+                key={wine.id}
+                className="mt-16 mx-auto max-w-5xl overflow-hidden rounded-3xl border border-white/10 bg-[#151013]/90 shadow-2xl backdrop-blur-xl relative"
+              >
 
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 p-6 sm:p-10 lg:p-12 items-center">
               {/* Columna Izquierda: Botella con Efecto Glow y Badges */}

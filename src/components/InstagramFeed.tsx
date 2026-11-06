@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { Heart, ExternalLink, ArrowLeftSquareIcon, ArrowRight} from "lucide-react";
+import { ExternalLink, ArrowRight } from "lucide-react";
 import InstagramIcon from "@/components/icons/InstagramIcon";
 import { landingData } from "@/data/landingData";
 
@@ -44,7 +44,7 @@ export default function InstagramFeed() {
 
         {/* Gallery Grid with interactive glowing cards */}
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6">
-          {instagramGallery.map((post, idx) => (
+          {instagramGallery.map((post) => (
             <a
               key={post.id}
               href={post.link}

@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { MessageCircle, Sparkles, ChevronDown, Wine, Flame, Heart } from "lucide-react";
+import { MessageCircle, Sparkles, ChevronDown, Wine } from "lucide-react";
 import { landingData } from "@/data/landingData";
 
 export default function Hero() {

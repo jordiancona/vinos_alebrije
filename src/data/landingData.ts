@@ -414,9 +414,15 @@ export const landingData = {
   // 12. GENERADOR DE MENSAJE PARA WHATSAPP
   // ----------------------------------------------------------------------------
   createWhatsAppLink: (productName?: string, quantity: number = 2) => {
-    const phone = "+56927253084"; // Reemplazar con el número del dueño
-    const text = productName
-      ? `¡Hola Vinos Alebrije! 🍷 Me gustaría hacer un pedido de ${quantity} botella(s) de *${productName}*. ¿Podrían confirmarme disponibilidad y costo de envío?`
+    // Sanitizar número sin signos ni caracteres no numéricos según RFC/WhatsApp wa.me spec
+    const phone = "56927253084";
+    const safeQty = Math.max(1, Math.min(120, Math.floor(Number(quantity) || 1)));
+    const safeName = productName
+      ? String(productName).replace(/[\r\n\t]/g, " ").trim().slice(0, 100)
+      : "";
+
+    const text = safeName
+      ? `¡Hola Vinos Alebrije! 🍷 Me gustaría hacer un pedido de ${safeQty} botella(s) de *${safeName}*. ¿Podrían confirmarme disponibilidad y costo de envío?`
       : `¡Hola Vinos Alebrije! 🍷 Quisiera consultar por su catálogo de vinos frizzante y opciones de despacho. ¡Muchas gracias!`;
     return `https://wa.me/${phone}?text=${encodeURIComponent(text)}`;
   },

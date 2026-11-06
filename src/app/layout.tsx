@@ -48,6 +48,12 @@ export const metadata: Metadata = {
     icon: "/images/logo.jpg",
     apple: "/images/logo.jpg",
   },
+  referrer: "origin-when-cross-origin",
+  formatDetection: {
+    telephone: false,
+    email: false,
+    address: false,
+  },
 };
 
 export default function RootLayout({

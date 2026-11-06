@@ -1,0 +1,9 @@
+# https://www.robotstxt.org/robotstxt.html
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /_next/
+
+# Host & Sitemap
+Sitemap: https://vinosalebrije.com/sitemap.xml
+

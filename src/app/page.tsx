@@ -4,7 +4,6 @@ import Hero from "@/components/Hero";
 import StorySection from "@/components/StorySection";
 import WineCatalog from "@/components/WineCatalog";
 import FrizzanteRitual from "@/components/FrizzanteRitual";
-import PairingSection from "@/components/PairingSection";
 import Testimonials from "@/components/Testimonials";
 import InstagramFeed from "@/components/InstagramFeed";
 import CarouselSection from "@/components/CarouselSection";

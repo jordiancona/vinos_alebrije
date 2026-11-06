@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { MessageCircle, Mail, MapPin, Clock, Send, Sparkles } from "lucide-react";
+import { MessageCircle, Mail, MapPin, Clock, Sparkles } from "lucide-react";
 import InstagramIcon from "@/components/icons/InstagramIcon";
 import { landingData } from "@/data/landingData";
 
@@ -13,7 +13,14 @@ export default function ContactSection() {
   const [customNotes, setCustomNotes] = useState("");
 
   const phone = contact.whatsappNumber.replace(/[^0-9]/g, "");
-  const msg = `¡Hola Vinos Alebrije! 🍷\nMe gustaría hacer un pedido:\n\n• Vino: *${selectedWine}*\n• Cantidad: *${quantity} botella(s)*\n${city ? `• Destino/Ciudad: *${city}*\n` : ""}${customNotes ? `• Nota especial: ${customNotes}\n` : ""}\n¿Podrían indicarme el total y los datos de transferencia o pago? ¡Gracias!`;
+
+  // Sanitización de entradas para prevenir inyecciones de control o URLs desbordadas
+  const safeCity = city.trim().replace(/[\r\n\t]/g, " ").slice(0, 80);
+  const safeNotes = customNotes.trim().replace(/[\r\n]{3,}/g, "\n\n").slice(0, 300);
+  const safeWine = selectedWine.trim().slice(0, 80);
+  const safeQuantity = ["2", "6", "12"].includes(quantity) ? quantity : "2";
+
+  const msg = `¡Hola Vinos Alebrije! 🍷\nMe gustaría hacer un pedido:\n\n• Vino: *${safeWine}*\n• Cantidad: *${safeQuantity} botella(s)*\n${safeCity ? `• Destino/Ciudad: *${safeCity}*\n` : ""}${safeNotes ? `• Nota especial: ${safeNotes}\n` : ""}\n¿Podrían indicarme el total y los datos de transferencia o pago? ¡Gracias!`;
   const whatsappOrderLink = `https://wa.me/${phone}?text=${encodeURIComponent(msg)}`;
 
   const handleWhatsAppOrder = (e: React.FormEvent) => {
@@ -109,6 +116,8 @@ export default function ContactSection() {
                   type="text"
                   placeholder="Ej: Las Condes, Santiago / Viña del Mar / etc."
                   value={city}
+                  maxLength={80}
+                  autoComplete="address-level2"
                   onChange={(e) => setCity(e.target.value)}
                   className="w-full rounded-xl border border-neutral-700 bg-neutral-900/90 px-4 py-3 text-sm text-white placeholder-neutral-500 focus:border-[#d4af37] focus:outline-none"/>
               </div>
@@ -122,6 +131,7 @@ export default function ContactSection() {
                   rows={3}
                   placeholder="¿Es para regalo? ¿Requieres entrega en una fecha específica?"
                   value={customNotes}
+                  maxLength={300}
                   onChange={(e) => setCustomNotes(e.target.value)}
                   className="w-full rounded-xl border border-neutral-700 bg-neutral-900/90 px-4 py-3 text-sm text-white placeholder-neutral-500 focus:border-[#d4af37] focus:outline-none resize-none"
                 />

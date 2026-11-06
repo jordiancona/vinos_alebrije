@@ -1,19 +1,14 @@
 "use client";
 
-import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { MessageCircle, Heart } from "lucide-react";
+import { MessageCircle } from "lucide-react";
 import InstagramIcon from "@/components/icons/InstagramIcon";
 import { landingData } from "@/data/landingData";
 
 export default function Footer() {
   const { brand, contact, navigation } = landingData;
-  const [year, setYear] = useState("2025");
-
-  useEffect(() => {
-    setYear(new Date().getFullYear().toString());
-  }, []);
+  const year = new Date().getFullYear();
 
   return (
     <footer className="border-t border-[#420a17]/50 bg-[#070506] text-neutral-400 text-xs py-16">

@@ -35,7 +35,7 @@ export default function Navbar() {
         <div className="mx-auto flex max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
           {/* Brand Logo & Name */}
           <Link href="#hero" className="flex items-center gap-3 group">
-            <div className="relative h-14 w-14 overflow-hidden rounded-full border border-[#d4af37]/60 shadow-md transition-transform duration-300 group-hover:scale-105">
+            <div className="relative h-16 w-16 overflow-hidden rounded-full border border-[#d4af37]/60 shadow-md transition-transform duration-300 group-hover:scale-105">
               <Image
                 src={landingData.brand.logo}
                 alt={landingData.brand.name}
