@@ -26,6 +26,7 @@ export interface WineProduct {
     temperature: string; // ej: "6°C - 8°C"
     sparkle: string; // ej: "Frizzante Natural (Aguja Fina)"
     terroir: string; // ej: "Valle Central, Chile"
+    variety: string; // ej: "Carmener"
   };
   tastingNotes: {
     view: string; // Color, brillo, burbuja
@@ -192,6 +193,7 @@ export const landingData = {
         temperature: "12°C - 15°C",
         sparkle: "Frizzante Natural (Perlage fino)",
         terroir: "Valle Colchagua, Chile",
+        variety: "Carmener"
       },
       tastingNotes: {
         view: "Tonalidad tinto, frambuesa brillante con reflejos violáceos y corona de burbujas vivaces.",
@@ -222,6 +224,7 @@ export const landingData = {
         temperature: "6°C - 8°C",
         sparkle: "Frizzante Natural (Perlage fino)",
         terroir: "Valle Central, Chile",
+        variety: "Cabernet Sauvignon"
       },
       tastingNotes: {
         view: "Tonalidad tinto, frambuesa brillante con reflejos violáceos y corona de burbujas vivaces.",
@@ -235,7 +238,7 @@ export const landingData = {
         "Postres ligeros a base de frutos del bosque",
       ],
       description:
-        "Nuestra creación más celebrada. Un vino frizzante que equilibra la dulzura natural de la uva con una acidez cítrica crujiente y una efervescencia chispeante que acompaña desde una tarde soleada hasta una cena íntima.",
+        "Un vino que nunca falla. Un vino frizzante que conserva la esencia floral y cítrica de sus uvas, con un equilibrio perfecto entre frescura y dulzura .",
     }
   ] as WineProduct[],
 

@@ -296,16 +296,16 @@ export default function WineCatalog() {
                   {/* Vibe / Sensación Meters */}
                   <div className="mt-6 grid grid-cols-2 sm:grid-cols-4 gap-2 text-center text-xs">
                     <div className="rounded-xl border border-white/5 bg-white/[0.02] p-2.5">
-                      <div className="text-[#f7e2a9] text-base font-bold">12% Vol</div>
+                      <div className="text-[#f7e2a9] text-base font-bold">{wine.specs.alcohol}</div>
                       <div className="text-sm text-neutral-400 mt-0.5">Grado Óptimo</div>
                     </div>
                     <div className="rounded-xl border border-white/5 bg-white/[0.02] p-2.5">
-                      <div className="text-[#f7e2a9] text-base font-bold">12° a 15°C</div>
+                      <div className="text-[#f7e2a9] text-base font-bold">{wine.specs.temperature}</div>
                       <div className="text-sm text-neutral-400 mt-0.5">Servir Muy Frío</div>
                     </div>
                     <div className="rounded-xl border border-white/5 bg-white/[0.02] p-2.5">
-                      <div className="text-[#f7e2a9] text-base font-bold">Aguja Fina</div>
-                      <div className="text-sm text-neutral-400 mt-0.5">Burbuja Suave</div>
+                      <div className="text-[#f7e2a9] text-base font-bold">{wine.specs.variety}</div>
+                      <div className="text-sm text-neutral-400 mt-0.5">Variedad de Uva</div>
                     </div>
                     <div className="rounded-xl border border-white/5 bg-white/[0.02] p-2.5">
                       <div className="text-[#f7e2a9] text-base font-bold">Andino</div>
