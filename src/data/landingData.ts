@@ -192,7 +192,7 @@ export const landingData = {
         alcohol: "12.5% Vol",
         temperature: "12°C - 15°C",
         sparkle: "Frizzante Natural (Perlage fino)",
-        terroir: "Valle Colchagua, Chile",
+        terroir: "Valle Colchagua",
         variety: "Carmener"
       },
       tastingNotes: {
@@ -223,7 +223,7 @@ export const landingData = {
         alcohol: "12.5% Vol",
         temperature: "6°C - 8°C",
         sparkle: "Frizzante Natural (Perlage fino)",
-        terroir: "Valle Central, Chile",
+        terroir: "Valle Colchagua",
         variety: "Cabernet Sauvignon"
       },
       tastingNotes: {
