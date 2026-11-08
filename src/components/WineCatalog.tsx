@@ -13,6 +13,7 @@ import { landingData } from "@/data/landingData";
 
 export default function WineCatalog() {
   const { wines } = landingData;
+  const { roseTypes } = landingData;
   const [activeTab, setActiveTab] = useState<"cata" | "maridaje" | "detalles">("cata");
   const [selectedPack, setSelectedPack] = useState<{ qty: number; label: string }>({
     qty: 2,
@@ -448,6 +449,42 @@ export default function WineCatalog() {
             ))}
           </div>
         )}
+        <div className="mt-12 text-center">
+            <p className="mt-5 text-base sm:text-lg text-neutral-300 font-light leading-relaxed">
+              Nuestros Alebrijes son ediciones limitadas y artesanales. Cada botella es única, ¡asegura la tuya antes de que se agoten!
+            </p>
+          </div>
+        {/* Bloque de los 4 Alebrijes (Imágenes + Nombre) */}
+        <div className="mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+          {roseTypes.map((rosetype) => (
+            <div
+              key={rosetype.id}
+              className="group relative overflow-hidden rounded-2xl border border-white/10 bg-[#151013]/90 shadow-xl backdrop-blur-sm hover:shadow-2xl transition duration-300 hover:scale-[1.03]">
+              {/* Fondo con efecto de brillo al pasar el mouse */}
+              
+              <div className="absolute inset-0 bg-gradient-to-t from-[#881632]/20 to-transparent opacity-0 group-hover:opacity-100 transition duration-300" />
+              
+              <div className="relative h-48 sm:h-74 overflow-hidden">
+                <Image
+                  src={rosetype.imageUrl}
+                  alt={rosetype.name}
+                  fill
+                  className="object-cover transition-transform duration-300 group-hover:scale-100"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#151013] via-transparent to-transparent opacity-70 group-hover:opacity-50 transition duration-300" />
+              </div>
+              
+              <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-5 bg-gradient-to-t from-[#151013] via-[#151013]/90 to-transparent">
+                <h4 className="font-serif text-xl sm:text-xl font-bold text-white truncate">
+                  {rosetype.name}
+                </h4>
+                 {/* <p className="text-xs text-[#d4af37] font-semibold tracking-widest uppercase mt-0.5">
+                  {rosetype.description}
+                </p> */}
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );

@@ -60,8 +60,7 @@ export default function Navbar() {
               <Link
                 key={item.href}
                 href={item.href}
-                className="text-xs uppercase tracking-widest text-neutral-300 transition-colors duration-200 hover:text-[#f7e2a9]"
-              >
+                className="text-xs uppercase tracking-widest text-neutral-300 transition-colors duration-200 hover:text-[#f7e2a9]">
                 {item.label}
               </Link>
             ))}
@@ -74,9 +73,8 @@ export default function Navbar() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Instagram de Vinos Alebrije"
-              className="flex h-10 w-10 items-center justify-center rounded-full border border-neutral-700/60 bg-neutral-900/60 text-neutral-300 transition hover:border-[#d4af37]/50 hover:text-[#f7e2a9] hover:scale-105"
-            >
-              <InstagramIcon className="h-4 w-4" />
+              className="flex h-12 w-12 items-center justify-center rounded-full border border-neutral-700/60 bg-neutral-900/60 text-neutral-300 transition hover:border-[#d4af37]/50 hover:text-[#f7e2a9] hover:scale-105">
+              <InstagramIcon className="h-5 w-5" />
             </a>
           </div>
 

@@ -65,6 +65,13 @@ export interface CarouselImage {
   caption: string;
 }
 
+export interface RoseTypes {
+  id: string;
+  name: string;
+  description: string;
+  imageUrl: string;
+}
+
 export const landingData = {
   // ----------------------------------------------------------------------------
   // 1. INFORMACIÓN GENERAL Y MARCA
@@ -105,6 +112,7 @@ export const landingData = {
     { label: "Nuestros Vinos", href: "#vinos" },
     { label: "El Ritual", href: "#ritual" },
     //{ label: "Cata & Maridaje", href: "#maridaje" },
+    { label: "Galería", href: "#galeria" },
     { label: "Opiniones", href: "#testimonios" },
     { label: "Preguntas", href: "#preguntas" },
     { label: "Contacto", href: "#contacto" },
@@ -179,7 +187,7 @@ export const landingData = {
   // ----------------------------------------------------------------------------
   wines: [
     {
-      id: "alebrije-frizzante-tinto",
+      id: "alebrije-frizzante-tinto",  // tinto
       name: "Alebrije Frizzante Tinto",
       variety: "Vino Frizzante Tinto",
       tagline: "Fresco, Intenso y deliciosamente seductor.",
@@ -210,10 +218,10 @@ export const landingData = {
         "Nuestra creación más celebrada. Un vino frizzante que equilibra la dulzura natural de la uva con una acidez cítrica crujiente y una efervescencia chispeante que acompaña desde una tarde soleada hasta una cena íntima.",
     },
     {
-      id: "alebrije-frizzante-rose",
+      id: "alebrije-frizzante-rose", // rosé
       name: "Alebrije Frizzante Rosé",
       variety: "Vino Frizzante Rosé",
-      tagline: "Fresco, floral y con toques cítricos.",
+      tagline: "Refrescante, floral y con toques cítricos.",
       badge: "El Favorito para Cualquier Temporada",
       price: "$2,500 CLP",
       priceNote: "Por lata / Descuento por caja de 6",
@@ -232,10 +240,10 @@ export const landingData = {
         mouth: "Entrada chispeante, golosa y refrescante. Equilibrada acidez con un final frutal prolongado.",
       },
       pairing: [
-        "Embutidos y carnes frías",
-        "Pizzas, lasaña, pastas o raviolis rellenos",
-        "Tapas mediterráneas y bruschettas",
-        "Postres ligeros a base de frutos del bosque",
+        "Pescados y mariscos",
+        "Quesos frescos y cremosos",
+        "Carnes blancas y aves: pollo",
+        "Desde ensaladas hasta Tapas ligeras y postres frutales",
       ],
       description:
         "Un vino que nunca falla. Un vino frizzante que conserva la esencia floral y cítrica de sus uvas, con un equilibrio perfecto entre frescura y dulzura .",
@@ -257,14 +265,14 @@ export const landingData = {
       },
       {
         step: "02",
-        title: "El Descorche Sutil",
-        desc: "Abre suavemente con ligera inclinación. Un pop delicado liberará la magia de sus aromas a frutos rojos y flores silvestres.",
+        title: "El Pop de la Magia",
+        desc: "Abre suavemente la lata. Un pop delicado liberará la magia de sus aromas a frutos rojos y flores silvestres.",
         icon: "sparkle",
       },
       {
         step: "03",
-        title: "Copa o Vaso (Tú Eliges)",
-        desc: "Sírvelo en copa flauta, copa de vino amplia o incluso en tu vaso preferido con hielo y una rodaja de frutilla. ¡Cero poses, puro goce!",
+        title: "Listo para tomar",
+        desc: "Aproveche la frescura y la acidez cítrica de su cuerpo con un final frutal prolongado sin la necesidad de una botella.",
         icon: "glass",
       },
       {
@@ -370,7 +378,7 @@ export const landingData = {
     {
       question: "¿A qué temperatura se recomienda consumir?",
       answer:
-        "Recomendamos servirlo bien frío, idealmente entre los 6°C y 8°C. Si estás en un día caluroso, una hielera con hielo y agua mantendrá las burbujas vivas y crujientes durante toda la velada.",
+        "Recomendamos servirlo bien frío, idealmente entre los 6°C y 8°C para Rosé o entre 12°C y 15°C para el tinto. Si estás en un día caluroso, una hielera con hielo y agua mantendrá las burbujas vivas y crujientes durante toda la velada.",
     },
   ] as FAQItem[],
 
@@ -380,7 +388,7 @@ export const landingData = {
   carousel: [
     {
       id: "carousel-1",
-      caption: "Burbujas al atardecer. Cada botella guarda un instante irrepetible.",
+      caption: "Cada botella guarda un instante irrepetible.",
       imageUrl: "/images/alebrije_tipos_1.jpg",
     },
     {
@@ -407,9 +415,38 @@ export const landingData = {
       id: "carousel-6",
       caption: "El ritual del frizzante: burbujas vivas en cada sorbo.",
       imageUrl: "/images/alebrije_inst_1.jpg",
-    },
+    }
   ] as CarouselImage[],
 
+  // ----------------------------------------------------------------------------
+  // 12. Tipos de Rosé (5 IMÁGENES)
+  // ----------------------------------------------------------------------------
+  roseTypes: [
+    {
+      id: "rose-1",
+      name: "Kuntur",
+      description: "Refrescante, floral y con toques cítricos.",
+      imageUrl: "/images/alebrije_rose_tipo_1.png",
+    },
+    {
+      id: "rose-2",
+      name: "Pudú",
+      description: "Refrescante, floral y con toques cítricos.",
+      imageUrl: "/images/alebrije_rose_tipo_2.png",
+    },
+    {
+      id: "rose-3",
+      name: "Güiña",
+      description: "Refrescante, floral y con toques cítricos.",
+      imageUrl: "/images/alebrije_rose_tipo_3.png",
+    },
+    {
+      id: "rose-4",
+      name: "Pingüino de Humboldt",
+      description: "Refrescante, floral y con toques cítricos.",
+      imageUrl: "/images/alebrije_rose_tipo_4.png",
+    },
+  ] as RoseTypes[],
   // ----------------------------------------------------------------------------
   // 12. GENERADOR DE MENSAJE PARA WHATSAPP
   // ----------------------------------------------------------------------------
@@ -422,7 +459,7 @@ export const landingData = {
       : "";
 
     const text = safeName
-      ? `¡Hola Vinos Alebrije! 🍷 Me gustaría hacer un pedido de ${safeQty} botella(s) de *${safeName}*. ¿Podrían confirmarme disponibilidad y costo de envío?`
+      ? `¡Hola Vinos Alebrije! 🍷 Me gustaría hacer un pedido de ${safeQty} lata(s) de *${safeName}*. ¿Podrían confirmarme disponibilidad y costo de envío?`
       : `¡Hola Vinos Alebrije! 🍷 Quisiera consultar por su catálogo de vinos frizzante y opciones de despacho. ¡Muchas gracias!`;
     return `https://wa.me/${phone}?text=${encodeURIComponent(text)}`;
   },

@@ -91,7 +91,7 @@ export default function CarouselSection() {
 
   return (
     <section
-      id="carrusel"
+      id="galeria"
       className="relative py-24 sm:py-32 bg-[#0b0809] overflow-hidden select-none"
       aria-roledescription="carousel"
       aria-label="Galería visual de Vinos Alebrije"
@@ -109,7 +109,7 @@ export default function CarouselSection() {
         <div className="text-center">
           <div className="inline-flex items-center gap-2 rounded-full border border-[#d4af37]/40 bg-gradient-to-r from-[#151013] via-[#420a17]/50 to-[#151013] px-4 py-1.5 text-xs font-semibold tracking-[0.25em] text-[#f7e2a9] uppercase shadow-lg shadow-[#651025]/20">
             <Sparkles className="h-3.5 w-3.5 text-[#d4af37]" />
-            <span>Galería Cinematográfica</span>
+            <span>Galería</span>
           </div>
 
           <h2 className="mt-5 font-serif text-3xl sm:text-5xl md:text-6xl font-bold tracking-tight text-white leading-tight">

@@ -20,7 +20,7 @@ export default function ContactSection() {
   const safeWine = selectedWine.trim().slice(0, 80);
   const safeQuantity = ["2", "6", "12"].includes(quantity) ? quantity : "2";
 
-  const msg = `¡Hola Vinos Alebrije! 🍷\nMe gustaría hacer un pedido:\n\n• Vino: *${safeWine}*\n• Cantidad: *${safeQuantity} botella(s)*\n${safeCity ? `• Destino/Ciudad: *${safeCity}*\n` : ""}${safeNotes ? `• Nota especial: ${safeNotes}\n` : ""}\n¿Podrían indicarme el total y los datos de transferencia o pago? ¡Gracias!`;
+  const msg = `¡Hola Vinos Alebrije! 🍷\nMe gustaría hacer un pedido:\n\n• Vino: *${safeWine}*\n• Cantidad: *${safeQuantity} lata(s)*\n${safeCity ? `• Destino/Ciudad: *${safeCity}*\n` : ""}${safeNotes ? `• Nota especial: ${safeNotes}\n` : ""}\n¿Podrían indicarme el total y los datos de transferencia o pago? ¡Gracias!`;
   const whatsappOrderLink = `https://wa.me/${phone}?text=${encodeURIComponent(msg)}`;
 
   const handleWhatsAppOrder = (e: React.FormEvent) => {
@@ -49,7 +49,7 @@ export default function ContactSection() {
         <div className="mt-16 grid grid-cols-1 lg:grid-cols-12 gap-10">
           {/* Formulario Simulador de Pedido */}
           <div className="lg:col-span-7 rounded-3xl border border-white/10 bg-[#151013] p-8 sm:p-10 shadow-2xl relative">
-            <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-[#d4af37] mb-2">
+            <div className="flex items-center gap-2 text-sm font-semibold uppercase tracking-widest text-[#d4af37] mb-2">
               <Sparkles className="h-4 w-4" />
               <span>Simulador de Pedido Rápido</span>
             </div>
@@ -83,12 +83,13 @@ export default function ContactSection() {
               {/* Cantidad de Botellas */}
               <div>
                 <label className="block text-xs font-semibold uppercase tracking-wider text-neutral-300 mb-2">
-                  Selecciona tu Pack
+                  Selecciona tu pedido (Cantidad de Latas)
                 </label>
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
                   {[
+                    { id: "1", label: "Lata x1", desc: "Prueba o Regalo Personal" },
                     { id: "2", label: "Pack x2", desc: "Cita / Terraza" },
-                    { id: "6", label: "Caja x6", desc: "Juntada con amigos" },
+                    { id: "6", label: "Caja x6", desc: "Reunión con amigos" },
                     { id: "12", label: "Caja x12", desc: "Fiesta / Evento" },
                   ].map((q) => (
                     <button
@@ -142,11 +143,22 @@ export default function ContactSection() {
                 href={whatsappOrderLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-[#651025] to-[#881632] py-4 text-sm font-semibold uppercase tracking-wider text-white shadow-xl shadow-[#651025]/40 transition duration-300 hover:from-[#881632] hover:to-[#b01e42] hover:scale-[1.01]"
-              >
+                className="w-full flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-[#651025] to-[#881632] py-4 text-sm font-semibold uppercase tracking-wider text-white shadow-xl shadow-[#651025]/40 transition duration-300 hover:from-[#881632] hover:to-[#b01e42] hover:scale-[1.01]">
                 <MessageCircle className="h-4 w-4 text-[#f7e2a9]" />
                 <span>Enviar Pedido a WhatsApp</span>
               </a>
+
+              {/* Mensaje de correo */}
+              <a 
+                href={`mailto:${contact.email}?subject=Consulta sobre pedido de Vinos Alebrije&body=${encodeURIComponent(msg)}`}
+                className="w-full flex items-center justify-center gap-2 rounded-xl border border-neutral-700 bg-neutral-900/90 py-4 text-sm font-semibold uppercase tracking-wider text-white shadow-md shadow-[#000000]/20 transition duration-300 hover:border-[#d4af37] hover:scale-[1.01]">
+                <Mail className="h-4 w-4 text-[#f7e2a9]" />
+                <span>Enviar Consulta por Correo</span>
+              </a>
+
+              <p className="text-xs text-neutral-500 mt-2">
+                Al presionar, se abrirá tu aplicación de WhatsApp o correo con el mensaje estructurado listo para enviar.
+              </p>
 
               <p className="text-center text-sm text-neutral-500">
                 Al presionar, se abrirá tu aplicación de WhatsApp con el mensaje estructurado listo para enviar.
