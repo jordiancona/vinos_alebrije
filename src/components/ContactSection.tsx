@@ -198,7 +198,7 @@ export default function ContactSection() {
                   rel="noopener noreferrer"
                   className="flex items-start gap-3 text-neutral-300 hover:text-[#f7e2a9] transition group">
                   <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-neutral-900 border border-neutral-800 group-hover:border-[#d4af37]/50 shrink-0">
-                    <MessageCircle className="h-5 w-5 text-[#d4af37]" />
+                    <FaWhatsapp className="h-5 w-5 text-[#d4af37]" />
                   </div>
                   <div>
                     <strong className="block text-white">WhatsApp Pedidos:</strong>
