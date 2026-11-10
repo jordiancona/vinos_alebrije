@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { MessageCircle, Mail, MapPin, Clock, Sparkles } from "lucide-react";
+import { FaWhatsapp } from "react-icons/fa";
 import InstagramIcon from "@/components/icons/InstagramIcon";
 import { landingData } from "@/data/landingData";
 
@@ -144,7 +145,7 @@ export default function ContactSection() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-[#651025] to-[#881632] py-4 text-sm font-semibold uppercase tracking-wider text-white shadow-xl shadow-[#651025]/40 transition duration-300 hover:from-[#881632] hover:to-[#b01e42] hover:scale-[1.01]">
-                <MessageCircle className="h-4 w-4 text-[#f7e2a9]" />
+                <FaWhatsapp className="h-4 w-4 text-[#f7e2a9]" />
                 <span>Enviar Pedido a WhatsApp</span>
               </a>
 

@@ -1,6 +1,6 @@
 "use client";
 
-import { MessageCircle } from "lucide-react";
+import { FaWhatsapp } from "react-icons/fa";
 import { landingData } from "@/data/landingData";
 
 export default function FloatingWhatsApp() {
@@ -17,7 +17,7 @@ export default function FloatingWhatsApp() {
       >
         {/* Pulsing ring */}
         <span className="absolute inset-0 rounded-full bg-[#25d366]/40 animate-ping pointer-events-none" />
-        <MessageCircle className="h-8 w-8 transition-transform group-hover:rotate-12" />
+        <FaWhatsapp className="h-8 w-8 transition-transform group-hover:rotate-12" />
       </a>
     </aside>
   );

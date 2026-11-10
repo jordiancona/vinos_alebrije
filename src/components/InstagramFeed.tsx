@@ -33,11 +33,9 @@ export default function InstagramFeed() {
               href={contact.instagramUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2.5 rounded-full bg-gradient-to-r from-[#651025] to-[#881632] px-6 py-3 text-xs font-bold uppercase tracking-wider text-white shadow-lg shadow-[#651025]/40 transition hover:from-[#881632] hover:to-[#b01e42] hover:scale-105 active:scale-95"
-            >
+              className="inline-flex items-center gap-2.5 rounded-full bg-gradient-to-r from-[#651025] to-[#881632] px-6 py-3 text-xs font-bold uppercase tracking-wider text-white shadow-lg shadow-[#651025]/40 transition hover:from-[#881632] hover:to-[#b01e42] hover:scale-105 active:scale-95">
               <InstagramIcon className="h-4 w-4 text-[#f7e2a9]" />
-              <span>Seguir {contact.instagramHandle}</span>
-              <ExternalLink className="h-3 w-3 text-neutral-300" />
+              <span>Seguir a {contact.instagramHandle}</span>
             </a>
           </div>
         </div>

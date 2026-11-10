@@ -30,6 +30,7 @@ export default function StorySection() {
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto">
           <div className="inline-flex items-center gap-2 rounded-full border border-[#d4af37]/40 bg-[#151013] px-3.5 py-1 text-xs font-semibold tracking-[0.2em] text-[#d4af37] uppercase">
+            <Sparkles className="h-3.5 w-3.5" />
             <span>{story.pretitle}</span>
           </div>
 

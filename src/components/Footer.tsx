@@ -2,7 +2,8 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { MessageCircle } from "lucide-react";
+import { MapPin, MessageCircle } from "lucide-react";
+import {FaWhatsapp} from "react-icons/fa";
 import InstagramIcon from "@/components/icons/InstagramIcon";
 import { landingData } from "@/data/landingData";
 
@@ -45,7 +46,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Instagram"
-                className="flex h-9 w-9 items-center justify-center rounded-full border border-neutral-800 bg-neutral-900 text-neutral-300 hover:border-[#d4af37] hover:text-[#f7e2a9] transition">
+                className="flex h-10 w-10 items-center justify-center rounded-full border border-neutral-800 bg-neutral-900 text-neutral-300 hover:border-[#d4af37] hover:text-[#f7e2a9] transition">
                 <InstagramIcon className="h-4 w-4" />
               </a>
               <a
@@ -53,8 +54,8 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="WhatsApp"
-                className="flex h-9 w-9 items-center justify-center rounded-full border border-neutral-800 bg-neutral-900 text-neutral-300 hover:border-[#d4af37] hover:text-[#f7e2a9] transition">
-                <MessageCircle className="h-4 w-4" />
+                className="flex h-10 w-10 items-center justify-center rounded-full border border-neutral-800 bg-neutral-900 text-neutral-300 hover:border-[#d4af37] hover:text-[#f7e2a9] transition">
+                <FaWhatsapp className="h-4 w-4" />
               </a>
             </div>
           </div>
@@ -87,7 +88,8 @@ export default function Footer() {
               {brand.legalNotice}
             </p>
             <div className="rounded-xl border border-white/5 bg-white/[0.02] p-3 text-[11px] text-neutral-400">
-              📍 Hecho con pasión vitivinícola en {brand.originRegion}.
+              <MapPin className="h-3.5 w-3.5 text-[#d4af37] inline-block mr-1" />
+              Hecho con pasión vitivinícola en {brand.originRegion}.
             </div>
           </div>
         </div>

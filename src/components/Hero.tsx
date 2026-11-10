@@ -2,7 +2,8 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { MessageCircle, Sparkles, ChevronDown, Wine } from "lucide-react";
+import { MessageCircle, Sparkles, ChevronDown, Wine, Pin, MapPin } from "lucide-react";
+import { FaWhatsapp } from "react-icons/fa";
 import { landingData } from "@/data/landingData";
 
 export default function Hero() {
@@ -36,6 +37,7 @@ export default function Hero() {
         <div className="inline-flex items-center gap-2 rounded-full border border-[#d4af37]/50 bg-gradient-to-r from-[#420a17]/90 via-[#151013]/90 to-[#420a17]/90 backdrop-blur-md px-4 py-1.5 text-xs font-semibold tracking-widest text-[#f7e2a9] uppercase shadow-lg shadow-[#420a17]/30 hover:scale-105 transition-transform duration-300">
           <Sparkles className="h-3.5 w-3.5 text-[#d4af37] animate-spin [animation-duration:8s]" />
           <span>{hero.badge}</span>
+          <MapPin className="h-3.5 w-3.5 text-[#d4af37]" />
         </div>
 
         {/* Main Headline */}
@@ -57,10 +59,9 @@ export default function Hero() {
             href={landingData.createWhatsAppLink()}
             target="_blank"
             rel="noopener noreferrer"
-            className="w-full sm:w-auto group relative inline-flex items-center justify-center gap-2.5 overflow-hidden rounded-full bg-gradient-to-r from-[#651025] via-[#881632] to-[#b01e42] px-8 py-4 text-sm font-bold tracking-wider uppercase text-white shadow-xl shadow-[#651025]/50 transition duration-300 hover:scale-105 active:scale-95"
-          >
+            className="w-full sm:w-auto group relative inline-flex items-center justify-center gap-2.5 overflow-hidden rounded-full bg-gradient-to-r from-[#651025] via-[#881632] to-[#b01e42] px-8 py-4 text-sm font-bold tracking-wider uppercase text-white shadow-xl shadow-[#651025]/50 transition duration-300 hover:scale-105 active:scale-95">
             <span className="absolute inset-0 bg-white/20 translate-y-full transition-transform duration-300 group-hover:translate-y-0" />
-            <MessageCircle className="h-4 w-4 text-[#f7e2a9] relative z-10 transition-transform group-hover:rotate-12" />
+            <FaWhatsapp className="h-4 w-4 text-[#f7e2a9] relative z-10 transition-transform group-hover:rotate-12" />
             <span className="relative z-10">{hero.primaryCtaText}</span>
           </a>
 

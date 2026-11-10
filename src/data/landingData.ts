@@ -122,7 +122,7 @@ export const landingData = {
   // 4. SECCIÓN HERO (PORTADA PRINCIPAL)
   // ----------------------------------------------------------------------------
   hero: {
-    badge: "Vino Frizzante Artesanal • Chile 📍",
+    badge: "Vino Frizzante Artesanal • Chile",
     titleLine1: "El Arte del Vino que",
     titleHighlight: "Despierta tu Espíritu",
     subtitle:
